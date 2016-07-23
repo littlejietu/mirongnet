@@ -9,14 +9,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">米荣网络</a>
+          <a class="navbar-brand" href="/"><?php echo C('site_name');?></a>
         </div>
         <div class="collapse navbar-collapse">        
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">首页</a>
               <ul class="dropdown-menu">
-                <li><a href="/">主页 1</a></li>
+                <li><a href="/">主页</a></li>
                 <!-- <li><a href="index-full.html">主页 2</a></li> -->
               </ul>
             </li>
@@ -42,13 +42,13 @@
                 <!-- <li><a href="error-page.html">404错误页面</a></li> -->
               </ul>
             </li>            
-            <!-- <li class="dropdown">
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">博客</a>
               <ul class="dropdown-menu">
                 <li><a href="blog.html">博客</a></li>
                 <li><a href="blog-post.html">博文</a></li>
               </ul>
-            </li> -->
+            </li>
             <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">商店</a>
               <ul class="dropdown-menu">

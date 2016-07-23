@@ -242,7 +242,7 @@
 				        <p class="lead text-muted">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor. Donec nisi velit, malesuada id dolor non, elementum auctor arcu.
                 </p>
-				        <a class="btn-animate btn-style btn-d btn-primary" href="#">Learn more</a>
+				        <a class="btn-animate btn-style btn-d btn-primary" href="#">了解更多</a>
               </div>              
             </div> <!-- / .row -->
         </div> <!-- / .container -->

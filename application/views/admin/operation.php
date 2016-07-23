@@ -80,16 +80,16 @@
           <td class="vatop tips"><?php echo lang('voucher_allow_notice');?></td>
         </tr> -->
         
-        <tr style="display:none;">
+       <!--  <tr style="display:none;">
           <td colspan="2" class="required" >配置apk文件的下载地址: </td>
         </tr>
         <tr class="noborder" style="display:none;">
           <td class="vatop rowform onoff">
             <input id="apkdownload_url" name="apkdownload_url"  value="<?php if(!empty($list['apkdownload_url'])){ echo $list['apkdownload_url'];}?>" type="text" >
           <td class="vatop tips"></td>
-        </tr>
+        </tr> -->
         
-        <tr>
+        <!-- <tr>
           <td colspan="2" class="required"><label for="file_adv_pic">起始广告图片:</label></td>
         </tr>
         <tr class="noborder">
@@ -108,122 +108,131 @@
             </div>
           </td>
           <td class="vatop tips"><?php echo lang('adv_edit_support');?>gif,jpg,jpeg,png</td>
-        </tr>
+        </tr> -->
         
-        <tr>
+        <!-- <tr>
           <td colspan="2" class="required">起始广告时间: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_10" name="start_ad_time"  value="<?php if(!empty($list['start_ad_time'])){ echo $list['start_ad_time'];}else {echo 0;}?>" type="text" >&nbsp;秒
           <td class="vatop tips">起始广告展现时间</td>
-        </tr>
+        </tr> -->
         
-        <tr style="display:none;">
+        <!-- <tr style="display:none;">
           <td colspan="2" class="required" >配置活动的网址: </td>
         </tr>
         <tr class="noborder" style="display:none;">
           <td class="vatop rowform onoff">
             <input id="activity_url" name="activity_url"  value="<?php if(!empty($list['activity_url'])){ echo $list['activity_url'];}?>" type="text" >
           <td class="vatop tips">活动网址</td>
-        </tr>
+        </tr> -->
         
-        <tr>
+       <!--  <tr>
           <td colspan="2" class="required">从发货到自动签收的时间: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="order_confirm_day" name="order_confirm_day"  value="<?php if(!empty($list['order_confirm_day'])){ echo $list['order_confirm_day'];}else {echo 0;}?>" type="text" >&nbsp;天
           <td class="vatop tips">发货之后到确认收货的时间</td>
-        </tr>
+        </tr> -->
         
-        <tr>
+        <!-- <tr>
           <td colspan="2" class="required">从签收到不可再退货的时间(从签收到开始发放佣金的时间): </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="order_commis_day" name="order_commis_day"  value="<?php if(!empty($list['order_commis_day'])){ echo $list['order_commis_day'];}else {echo 0;}?>" type="text" >&nbsp;天
           <td class="vatop tips">从签收到不可再退货的时间,当订单不可再退货的时候即开始发放佣金</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">1级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_1" name="distribute_rate_1"  value="<?php if(!empty($list['distribute_rate_1'])){ echo $list['distribute_rate_1'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">2级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_2" name="distribute_rate_2"  value="<?php if(!empty($list['distribute_rate_2'])){ echo $list['distribute_rate_2'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">3级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_3" name="distribute_rate_3"  value="<?php if(!empty($list['distribute_rate_3'])){ echo $list['distribute_rate_3'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">4级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_4" name="distribute_rate_4"  value="<?php if(!empty($list['distribute_rate_4'])){ echo $list['distribute_rate_4'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">5级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_5" name="distribute_rate_5"  value="<?php if(!empty($list['distribute_rate_5'])){ echo $list['distribute_rate_5'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">6级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_6" name="distribute_rate_6"  value="<?php if(!empty($list['distribute_rate_6'])){ echo $list['distribute_rate_6'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">7级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_7" name="distribute_rate_7"  value="<?php if(!empty($list['distribute_rate_7'])){ echo $list['distribute_rate_7'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">8级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_8" name="distribute_rate_8"  value="<?php if(!empty($list['distribute_rate_8'])){ echo $list['distribute_rate_8'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">9级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_9" name="distribute_rate_9"  value="<?php if(!empty($list['distribute_rate_9'])){ echo $list['distribute_rate_9'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td colspan="2" class="required">10级上家分佣比: </td>
         </tr>
         <tr class="noborder">
           <td class="vatop rowform onoff">
             <input id="distribute_rate_10" name="distribute_rate_10"  value="<?php if(!empty($list['distribute_rate_10'])){ echo $list['distribute_rate_10'];}else {echo 0;}?>" type="text" >
           <td class="vatop tips">上家所能够获得的佣金占利润的比例（数值范围0-1）</td>
+        </tr> -->
+
+        <tr>
+          <td colspan="2" class="required">名称: </td>
+        </tr>
+        <tr class="noborder">
+          <td class="vatop rowform onoff">
+            <input id="site_name" name="site_name"  value="<?php if(!empty($list['site_name'])){ echo $list['site_name'];}else {echo 0;}?>" type="text" >
+          <td class="vatop tips">站点名称</td>
         </tr>
         
       </tbody>
