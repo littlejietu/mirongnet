@@ -11,7 +11,13 @@ class Home extends CI_Controller {
 
 	public function index() {
 
-        $this->load->view('front/index');
+        $nav = array('page'=>'home',
+            'page_title'=>'首页',
+            );
+        $data = array(
+            'nav'=>$nav,
+            );
+        $this->load->view('front/index',$data);
 
     }
 

@@ -14,52 +14,52 @@
         <div class="collapse navbar-collapse">        
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">é¦–é¡µ</a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ê×Ò³</a>
               <ul class="dropdown-menu">
-                <li><a href="/">ä¸»é¡µ</a></li>
-                <!-- <li><a href="index-full.html">ä¸»é¡µ 2</a></li> -->
+                <li><a href="/">Ö÷Ò³</a></li>
+                <!-- <li><a href="index-full.html">Ö÷Ò³ 2</a></li> -->
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">APPå¼€å‘æœåŠ¡</a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">APP¿ª·¢·þÎñ</a>
               <ul class="dropdown-menu">
-                <li><a href="cases">æ–‡ä»¶å¤¹</a></li>
-                <!-- <li><a href="portfolio-item-1.html">ç»„åˆé¡¹ç›®</a></li> -->
+                <li><a href="cases">ÎÄ¼þ¼Ð</a></li>
+                <!-- <li><a href="portfolio-item-1.html">×éºÏÏîÄ¿</a></li> -->
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">é¡µé¢</a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ò³Ãæ</a>
               <ul class="dropdown-menu">
-                <li><a href="about">å…³äºŽæˆ‘ä»¬</a></li>
-                <!-- <li><a href="coming-soon.html">é©¬ä¸Šå°±æ¥</a></li> -->
-                <li><a href="contact">è”ç³»æˆ‘ä»¬</a></li>
-                <!-- <li><a href="help-center.html">å¸®åŠ©ä¸­å¿ƒ</a></li> -->
-                <!-- <li><a href="help-item.html">å¸®åŠ©é¡¹ç›®</a></li> -->
-                <!-- <li><a href="pricing-table.html">å®šä»·è¡¨</a></li> -->
-                <!-- <li><a href="services.html">æœåŠ¡</a></li> -->
-                <li><a href="signln">ç™»å½•</a></li>
-                <li><a href="signup">æ³¨å†Œ</a></li>
-                <!-- <li><a href="error-page.html">404é”™è¯¯é¡µé¢</a></li> -->
+                <li><a href="about">¹ØÓÚÎÒÃÇ</a></li>
+                <!-- <li><a href="coming-soon.html">ÂíÉÏ¾ÍÀ´</a></li> -->
+                <li><a href="contact">ÁªÏµÎÒÃÇ</a></li>
+                <!-- <li><a href="help-center.html">°ïÖúÖÐÐÄ</a></li> -->
+                <!-- <li><a href="help-item.html">°ïÖúÏîÄ¿</a></li> -->
+                <!-- <li><a href="pricing-table.html">¶¨¼Û±í</a></li> -->
+                <!-- <li><a href="services.html">·þÎñ</a></li> -->
+                <li><a href="signln">µÇÂ¼</a></li>
+                <li><a href="signup">×¢²á</a></li>
+                <!-- <li><a href="error-page.html">404´íÎóÒ³Ãæ</a></li> -->
               </ul>
             </li>            
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">åšå®¢</a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">²©¿Í</a>
               <ul class="dropdown-menu">
-                <li><a href="blog.html">åšå®¢</a></li>
-                <li><a href="blog-post.html">åšæ–‡</a></li>
+                <li><a href="blog.html">²©¿Í</a></li>
+                <li><a href="blog-post.html">²©ÎÄ</a></li>
               </ul>
             </li>
             <!-- <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">å•†åº—</a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">ÉÌµê</a>
               <ul class="dropdown-menu">
-                <li><a href="shop.html">å•†åº—</a></li>
-                <li><a href="shop-item.html">å•†åº—é¡¹ç›®</a></li>
-                <li><a href="shopping-cart.html">è´­ç‰©è½¦</a></li>
-                <li><a href="user-profile.html">ç”¨æˆ·é…ç½®æ–‡ä»¶</a></li>
+                <li><a href="shop.html">ÉÌµê</a></li>
+                <li><a href="shop-item.html">ÉÌµêÏîÄ¿</a></li>
+                <li><a href="shopping-cart.html">¹ºÎï³µ</a></li>
+                <li><a href="user-profile.html">ÓÃ»§ÅäÖÃÎÄ¼þ</a></li>
               </ul>
             </li> -->
             <!-- <li class="hidden-sm">
-              <a href="ui-elements.html">ç”¨æˆ·ç•Œé¢å…ƒç´ </a>
+              <a href="ui-elements.html">ÓÃ»§½çÃæÔªËØ</a>
             </li>  -->           
             <!-- Navbar Search -->
             <li class="hidden-xs" id="navbar-search">
@@ -68,7 +68,7 @@
               </a>
               <div class="hidden" id="navbar-search-box">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="æœç´¢">
+                  <input type="text" class="form-control" placeholder="ËÑË÷">
                   <span class="input-group-btn">
                     <button class="btn btn-style btn-k btn-primary" type="button">Go!</button>
                   </span>
@@ -81,7 +81,7 @@
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search">
               <span class="input-group-btn">
-                <button class="btn btn-blue" type="button">æœç´¢!</button>
+                <button class="btn btn-blue" type="button">ËÑË÷!</button>
               </span>
             </div>
           </form>          
