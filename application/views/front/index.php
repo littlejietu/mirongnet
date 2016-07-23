@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>Rooster - Multipurpose Business Theme</title>
+    <title>杭州米荣网络科技有限公司</title>
   
     <!-- Bootstrap core CSS -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -19,10 +19,10 @@
       <?php echo _get_html_cssjs('js','html5shiv.js,respond.min.js','js');?>
     <![endif]-->
   </head>
-  <body>
+<body>
 
 
-<?php include("inc/header.php");?>
+<?php include("inc/nav.php");?>
 
     <!-- Wrapper -->
     <div class="wrapper">
@@ -416,6 +416,6 @@
   <?php include("inc/footer.php");?>
   <?php echo _get_html_cssjs('js','jquery-1.11.0.min.js,bootstrap.min.js,scrolltopcontrol.js','js');?>
   <?php echo _get_html_cssjs('js','SmoothScroll.js,lightbox-2.6.min.js,custom.js,index.js','js');?>
-   
+
   </body>
 </html>
