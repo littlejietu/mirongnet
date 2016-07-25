@@ -20,9 +20,14 @@ class Cases extends CI_Controller {
         
         $list = $this->Cases_model->get_list($arrWhere);
         //print_r($list);die;
-       
+        
+        $nav = array('page'=>'cases',
+            'page_title'=>'案例展示',
+            );
+
         $result = array(
             'list' => $list,
+            'nav'=>$nav,
             );
             
 

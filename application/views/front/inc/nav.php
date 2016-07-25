@@ -28,8 +28,8 @@
             <li class="dropdown<?php if($nav['page']=='news') echo ' active'; ?>">
               <a href="news">APP开发资讯</a>
             </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于米荣</a>
+            <li class="dropdown<?php if($nav['page']=='about') echo ' active'; ?>">
+              <a href="about">关于米荣</a>
             </li>
             <!-- Navbar Search -->
             <li class="hidden-xs" id="navbar-search">

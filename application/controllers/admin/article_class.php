@@ -17,7 +17,7 @@ class Article_Class extends MY_Admin_Controller {
         $p = $this->Article_Class_model->get_list($where,'parent_id');
         $where['parent_id'] = 0;
         $list = $this->Article_Class_model->get_list($where);
-        
+        //print_r($list);die;
         $parent_id = array();
         foreach ($p as $key=>$value)
         {

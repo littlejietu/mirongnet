@@ -7,9 +7,13 @@ class About extends MY_Controller
         parent::__construct();
     }
     public function index(){
-    	$data = array(
-    		'page_nav'=>'关于我们',
+    	$nav = array('page'=>'about',
+    		'page_title'=>'关于米荣',
     		);
+        
+        $data = array(
+            'nav'=>$nav,
+            );
 
     	$this->load->view('front/about',$data);
     }

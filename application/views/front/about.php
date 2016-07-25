@@ -22,7 +22,7 @@
   </head>
 
   <body>
-    <?php include("inc/header.php");?>
+    <?php include("inc/nav.php");?>
 
     <!-- Wrapper -->
     <div class="wrapper">
@@ -33,7 +33,7 @@
           <div class="row">            
             <ol class="breadcrumb hidden-xs">
               <li><a href="/">首页</a></li>
-              <li class="active">关于我们</li>
+              <li class="active"><?php echo $nav['page_title'];?></li>
             </ol>                      
           </div> <!-- / .row -->
         </div> <!-- / .container -->
