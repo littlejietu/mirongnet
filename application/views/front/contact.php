@@ -25,7 +25,7 @@
   </head>
 
   <body>
-    <?php include("inc/header.php");?>
+    <?php include("inc/nav.php");?>
 
     <!-- Wrapper -->
     <div class="wrapper">
@@ -46,22 +46,22 @@
         <div class="row">
 		
           <div class="col-sm-8">
-            <h3 class="first-child"><span>让我们保持联系</span></h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <h3 class="first-child"><span>留言</span></h3>
+            <p style="text-align:center">把您的需求告诉我们，我们为您创造商业价值，打造移动互联的未来。</p>
             <form role="form">
 			  <div class="form-group">
-                <label for="name">名称</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter Your Name">
+                <label for="name">您的姓名</label>
+                <input type="text" class="form-control" id="name" placeholder="请填写您的姓名">
               </div>
               <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter Your Mail">
+                <label for="email">联系方式</label>
+                <input type="email" class="form-control" id="email" placeholder="请填写您的手机/QQ/邮箱">
               </div>              
               <div class="form-group">
-                <label for="message">消息</label>
-                <textarea class="form-control" rows="3" id="message" placeholder="Type Message"></textarea>
+                <label for="message">需求/建议</label>
+                <textarea class="form-control" rows="3" id="message" placeholder="请填写您的需求或建议"></textarea>
               </div>
-              <div class="form-group">
+             <!--  <div class="form-group">
                 <label for="exampleInputFile">上传文件</label>
                 <input type="file" id="exampleInputFile">
                 <p class="help-block">附加文件.</p>
@@ -70,23 +70,23 @@
                 <label>
                   <input type="checkbox"> Send a copy to myself
                 </label>
-              </div>			  
-              <a href="#" type="submit" class="btn-animate btn-style btn-d btn-primary">发送请求</a>
+              </div> -->			  
+              <a href="#" type="submit" class="btn-animate btn-style btn-d btn-primary">提交留言</a>
             </form>
           </div>
           <div class="col-sm-4">
-            <h3 class="second-child"><span>取得联系</span></h3>
+            <h3 class="second-child"><span>联系我们</span></h3>
             <p>
-              杭州江干区<br />
-              下沙<br />
-              电话: 92 026 365 2569<br />
-              传真: 92 026 365 2570<br />
-              Email: <a href="mailto:#">supportcenter@mail.com</a>
+              QQ: &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3517172160&amp;site=qq&amp;menu=yes" target="_blank"><img border="0" title="点击这里给我发消息" alt="点击这里给我发消息" src="<?php echo _get_cfg_path('img');?>qq_online.gif" style=" vertical-align: middle;"></a><br />
+              电话: 159 6885 0531<br />
+            </p>  
+            <p>
+              杭州经济开发区<br />
             </p>           
             
-            <div class="maps">
+            <!-- <div class="maps">
               <div id="google-maps" class="map"></div>
-            </div>	
+            </div>	 -->
             
           </div>
 		  
