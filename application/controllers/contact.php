@@ -7,9 +7,13 @@ class Contact extends MY_Controller
         parent::__construct();
     }
     public function index(){
-    	$data = array(
-    		'page_nav'=>'联系我们',
-    		);
+    	$nav = array('page'=>'contact',
+            'page_title'=>'联系我们',
+            );
+
+        $data = array(
+            'nav'=>$nav,
+            );
 
     	$this->load->view('front/contact',$data);
     }
