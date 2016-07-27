@@ -20,16 +20,16 @@
               <a href="<?php echo base_url();?>service">APP开发服务</a>
             </li>
             <li class="dropdown<?php if($nav['page']=='solution') echo ' active'; ?>">
-              <a href="solution">APP解决方案</a>
+              <a href="<?php echo base_url();?>solution">APP解决方案</a>
             </li>
             <li class="dropdown<?php if($nav['page']=='cases') echo ' active'; ?>">
-              <a href="cases">APP开发案例</a>
+              <a href="<?php echo base_url();?>cases">APP开发案例</a>
             </li>
             <li class="dropdown<?php if($nav['page']=='news') echo ' active'; ?>">
-              <a href="news">APP开发资讯</a>
+              <a href="<?php echo base_url();?>news">APP开发资讯</a>
             </li>
             <li class="dropdown<?php if($nav['page']=='about') echo ' active'; ?>">
-              <a href="about">关于米荣</a>
+              <a href="<?php echo base_url();?>about">关于米荣</a>
             </li>
             <!-- Navbar Search -->
             <li class="hidden-xs" id="navbar-search">
