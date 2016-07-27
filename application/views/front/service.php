@@ -100,10 +100,10 @@
             <div class="col-sm-4">
               <div class="services">
                 <div class="service-item">
-                  <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/api'"><i class="fa fa-laptop"></i></span>
+                  <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/shop'"><i class="fa fa-laptop"></i></span>
                   <div class="service-desc">
-                    <h4><b><a href="<?php echo base_url();?>service/api">API开发</a></b></h4>
-                    <p>采用java,php,c#.net等Web Service,HTTP服务器接口开发</p>
+                    <h4><b><a href="<?php echo base_url();?>service/shop">电商APP</a></b></h4>
+                    <p>专业为您提供全模式的商城APP/电商APP解决方案</p>
                   </div>
                 </div>
               </div> <!-- / .services -->

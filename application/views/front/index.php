@@ -129,11 +129,11 @@
           <div class="row">
             <div class="col-sm-4">
               <div class="services">
-                <div class="service-item">
-                  <span class="icon icon-1 icon-1c"><i class="fa fa-shield"></i></span>
+                <div class="service-item" title="助力企业快速实现移动化战略布局">
+                  <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/ios'"><i class="fa fa-apple"></i></span>
                   <div class="service-desc">
-                    <h4>安全支付解决方案</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4><b><a href="<?php echo base_url();?>service/ios">IOS开发</a></b></h4>
+                    <p>提供一站式的IOS手机APP定制开发服务</p>
                   </div>
                 </div>
               </div> <!-- / .services -->
@@ -141,10 +141,10 @@
             <div class="col-sm-4">
               <div class="services">
                 <div class="service-item">
-                  <span class="icon icon-1 icon-1c"><i class="fa fa-refresh"></i></span>
+                  <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/android'"><i class="fa fa-android"></i></span>
                   <div class="service-desc">
-                    <h4>提供退货政策</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4><b><a href="<?php echo base_url();?>service/android">Android开发</a></b></h4>
+                    <p>用户量最多的移动OS，推广相对容易，系统开放性高</p>
                   </div>
                 </div>
               </div> <!-- / .services -->
@@ -152,24 +152,23 @@
             <div class="col-sm-4">
               <div class="services">
                 <div class="service-item">
-                  <span class="icon icon-1 icon-1c"><i class="fa fa-plane"></i></span>
+                  <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/wx'"><i class="fa fa-comments-o"></i></span>
                   <div class="service-desc">
-                    <h4>免费送货</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4><b><a href="<?php echo base_url();?>service/wx">微信公众号开发</a></b></h4>
+                    <p>微商城，微分销系统，微官网，微营销，微会员，微支付等开发</p>
                   </div>
                 </div>
               </div> <!-- / .services -->
             </div>
           </div>
-          <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >企业网站模板</a></div>
           <div class="row">
             <div class="col-sm-4">
               <div class="services">
                 <div class="service-item">
-                  <span class="icon icon-1 icon-1c"><i class="fa fa-rocket"></i></span>
+                  <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/h5'"><i class="fa fa-tablet"></i></span>
                   <div class="service-desc">
-                    <h4>在时钟支持</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4><b><a href="<?php echo base_url();?>service/h5">H5手机站开发</a></b></h4>
+                    <p>移动体验好，推广成本低，建站速度快，建站成本低</p>
                   </div>
                 </div>
               </div> <!-- / .services -->
@@ -177,10 +176,10 @@
             <div class="col-sm-4">
               <div class="services">
                 <div class="service-item">
-                  <span class="icon icon-1 icon-1c"><i class="fa fa-truck"></i></span>
+                  <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/web'"><i class="fa fa-desktop"></i></span>
                   <div class="service-desc">
-                    <h4>准时交货</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4><b><a href="<?php echo base_url();?>service/web">Web网站开发</a></b></h4>
+                    <p>电商/商城类，企业官网，社交，社区网站制作</p>
                   </div>
                 </div>
               </div> <!-- / .services -->
@@ -188,15 +187,17 @@
             <div class="col-sm-4">
               <div class="services">
                 <div class="service-item">
-                  <span class="icon icon-1 icon-1c"><i class="fa fa-money"></i></span>
+                  <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/shop'"><i class="fa fa-laptop"></i></span>
                   <div class="service-desc">
-                    <h4>金钱担保</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4><b><a href="<?php echo base_url();?>service/shop">电商APP</a></b></h4>
+                    <p>专业为您提供全模式的商城APP/电商APP解决方案</p>
                   </div>
                 </div>
               </div> <!-- / .services -->
             </div>
-          </div> <!-- / .row -->
+          </div>
+         
+
         </div> <!-- / .container -->
       </div> <!-- / .main-features -->
 	  <!-- Responsive Showcase -->
@@ -205,9 +206,10 @@
           <div class="responsive-design">
             <div class="row">
              <div class="col-md-6 col-sm-6 col-xs-12">
-                <h2>充分响应设计</h2>
+                <h2>全网营销平台</h2>
                 <p class="lead text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor. Donec nisi velit, malesuada id dolor non, elementum auctor arcu. Cras consectetur sapien et purus posuere, ac amel hendrerit nunc luctus.
+                  帮助企业快速构建与移动互联网用户的全网营销平台: <br />20+营销模块灵活组合，个性化配置，App + 微信商城 + PC网站
+打通淘宝、京东等平台，一站式管理全网营销
                 </p>
                 <ul class="col-md-12 col-sm-12 col-xs-12 list-inline">
                   <li><i class="fa fa-mobile text-blue inactive" data-device="#iphone"></i></li>
@@ -232,17 +234,23 @@
         <div class="container">
             <div class="row">
 			  <div class="col-md-6 col-sm-6 col-xs-12">
-                <img class="img-responsive show text-center" src="<?php echo _get_cfg_path('img');?>article-girl.png" alt="..." style="height:100%;width:100%">               
+                <img class="img-responsive show text-center" src="<?php echo _get_cfg_path('img');?>shop_net.png" alt="..." width="350">               
               </div>
               <div class="col-md-6 col-sm-6 col-xs-12">
-                <h2>米荣是你的网站一个很好的选择</h2>
+                <h2>米荣商城有哪些功能 ？</h2>
                 <p class="lead text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor. Donec nisi velit, malesuada id dolor non, elementum auctor arcu. Cras consectetur sapien et purus posuere, ac amel hendrerit nunc luctus.
+               门店自提&nbsp;&nbsp;&nbsp;&nbsp;线下自提站<br />
+频道专题&nbsp;&nbsp;&nbsp;&nbsp;在线客服<br />
+平台结算&nbsp;&nbsp;&nbsp;&nbsp;预存款充值卡 <br />
+微信登录、支付&nbsp;&nbsp;&nbsp;&nbsp;平台红包<br />
+商品SKU&nbsp;&nbsp;&nbsp;&nbsp;店铺装修<br />
+售卖区域&nbsp;&nbsp;&nbsp;&nbsp;晒单分享&nbsp;&nbsp;&nbsp;&nbsp;移动端应用<br />
+<br />
+
+
                 </p>
-				        <p class="lead text-muted">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor. Donec nisi velit, malesuada id dolor non, elementum auctor arcu.
-                </p>
-				        <a class="btn-animate btn-style btn-d btn-primary" href="#">了解更多</a>
+				        
+				        <a class="btn-animate btn-style btn-d btn-primary" href="<?php echo base_url()?>contact">了解更多</a>
               </div>              
             </div> <!-- / .row -->
         </div> <!-- / .container -->
@@ -253,7 +261,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
-              <h2 class="uline-title text-center">顾客在说什么?</h2>
+              <h2 class="uline-title text-center">开发资讯</h2>
             </div>
           </div> <!-- / .row -->
           <div class="row">			
@@ -338,78 +346,7 @@
         </div> <!-- / .container -->
       </div> <!-- / .feedback -->
   
-      <!-- Call Action -->
-	  <div class="call-actions">
-	    <div class="container">
-		  <div class="row">
-            <div class="col-sm-12">
-              <h2 class="uline-title text-center">你喜欢你所看到的吗?</h2>
-            </div>
-          </div> <!-- / .row -->
-		  <div class="row">
-		    <div class="call-action text-center">
-		      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget turpis pulvinar, tempor odio sed, adipiscing dolor. Donec nisi velit, malesuada id dolor non, elementum auctor arcu. Cras consectetur sapien et purus posuere, ac amel hendrerit nunc luctus. Donec nisi velit, malesuada id dolor non, elementum auctor arcu. Cras consectetur sapien et purus posuere, ac amel hendrerit nunc luctus.</p>
-              <br />
-			  <a class="btn-animate btn-style btn-lg btn-e btn-primary" href="pricing-table.html">Purchase Now</a>
-		    </div><br /><br /><br />
-		  </div><!-- / .row -->
-        </div><!-- / .container -->
-	  </div><!-- / .Call Action -->
-  
-      <!-- 博客 -->
-	  <div class="blog-posts">
-		<div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <h2 class="uline-title text-center">博客</h2>
-            </div>
-          </div> <!-- / .row -->
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="blog">
-                <img src="<?php echo _get_cfg_path('img');?>avatar.jpg" alt="...">
-                <div class="blog-desc">
-                  <h3>
-                    <a href="blog-post.html">At vero eos et accu samus et iusto odio dignis simos ducimus qui bland itiis prae sentium voluptatum.</a>
-                  </h3>
-                  <hr>
-                  <p class="text-muted">by John smith</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas tuerpis.....</p>
-                  <a class="btn-animate btn-style btn-d btn-primary" href="blog-post.html">Read More...</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="blog">
-                <img src="<?php echo _get_cfg_path('img');?>avatar.jpg" alt="...">
-                <div class="blog-desc">
-                  <h3>
-                    <a href="blog-post.html">At vero eos et accu samus et iusto odio dignis simos ducimus qui bland itiis prae sentium voluptatum.</a>
-                  </h3>
-                  <hr>
-                  <p class="text-muted">by John smith</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas tuerpis.....</p>
-                  <a class="btn-animate btn-style btn-d btn-primary" href="blog-post.html">Read More...</a>
-                </div>
-              </div>
-            </div>
-			      <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="blog">
-                <img src="<?php echo _get_cfg_path('img');?>avatar.jpg" alt="...">
-                <div class="blog-desc">
-                  <h3>
-                    <a href="blog-post.html">At vero eos et accu samus et iusto odio dignis simos ducimus qui bland itiis prae sentium voluptatum.</a>
-                  </h3>
-                  <hr>
-                  <p class="text-muted">by John smith</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas tuerpis.....</p>
-                  <a class="btn-animate btn-style btn-d btn-primary" href="blog-post.html">Read More...</a>
-                </div>
-              </div>
-            </div>
-          </div> <!-- / .row -->
-		</div> <!-- / .container -->
-	  </div> <!-- / .博客 -->
+      
 	  
     </div> <!-- / .wrapper -->
 
