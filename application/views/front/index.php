@@ -44,11 +44,11 @@
               <div class="container">
                 <div class="row">
                   <div class="col-sm-6">
-                    <h1 class="first-child animated slideInDown delay-2"><strong><span class="text-blue">Powerful</span></strong> <small>Multipurpose Theme</small></h1> 
-                    <h4 class="animated fadeInUpBig delay-4"><span>Built with Bootstrap 3x</span></h4>
-                    <h4 class="animated fadeInUpBig delay-5"><span>20+ HTML Templates</span></h4>
-					          <h4 class="animated fadeInUpBig delay-6"><span>Isotope Gallery</span></h4><br/>
-                    <a class="btn-animate btn-style btn-lg btn-f btn-primary animated bounceInDown delay-6" href="#">Get Started Now!</a>
+                    <h1 class="first-child animated slideInDown delay-2"><strong><span class="text-blue">个性</span></strong> <small>定制</small></h1> 
+                    <h4 class="animated fadeInUpBig delay-4"><span>微分销 3+3多级分佣</span></h4>
+                    <h4 class="animated fadeInUpBig delay-5"><span>拼团,满减,红包,分享有礼..</span></h4>
+					          <h4 class="animated fadeInUpBig delay-6"><span>360度运营朋友圈</span></h4><br/>
+                    <a class="btn-animate btn-style btn-lg btn-f btn-primary animated bounceInDown delay-6" href="<?php echo base_url();?>contact" title="微分销 3+3多级分佣,拼团,满减,红包,分享有礼,360度运营朋友圈">马上了解!</a>
                   </div>
                   <div class="col-sm-6 hidden-xs">
                     <img class="img-responsive" src="<?php echo _get_cfg_path('img');?>showcase.png" alt="...">
@@ -57,41 +57,43 @@
               </div> <!-- / .container -->
             </div> <!-- / .item -->
             <!-- Slide #2 -->
-            <div class="item" id="item-2">
+            <div class="item" id="item-2" style="cursor:pointer;" onclick="window.location.href='<?php echo base_url();?>service';">
               <div class="container">
                 <div class="row">
-				  <div class="col-sm-7 hidden-xs">
-					<div class="boxshadow">
-					  <!-- <div class="video-container">
-						<iframe width="620" height="350" src="http://www.youtube.com/embed/JUkomDq73Bk" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>    
-					  </div> -->
-					</div>
+                <!--
+        				  <div class="col-sm-7 hidden-xs">
+          					<div class="boxshadow">
+          					   <div class="video-container">
+          						<iframe width="620" height="350" src="http://www.youtube.com/embed/JUkomDq73Bk" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>    
+          					  </div>
+          					</div>
                   </div>
                   <div class="col-sm-5">
-				    <h1 class="first-child animated fadeInUpBig delay-2"><strong><span class="text-red">Responsive</span></strong> <small><span class="text-white">Video Support</span></small></h1> 
-                    <ul class="string">
-					  <li class="animated slideInDown delay-4"><span><strong>Excellent With Rooster</strong></span></li>
-                      <li class="animated bounceInRight delay-6"><h2>Add You-tube Videos to your Slides easily</h2></li>                      
-                    </ul>                    
-                  </div>                  
+          				    <h1 class="first-child animated fadeInUpBig delay-2"><strong><span class="text-red">Responsive</span></strong> <small><span class="text-white">Video Support</span></small></h1> 
+                      <ul class="string">
+          					     <li class="animated slideInDown delay-4"><span><strong>Excellent With Rooster</strong></span></li>
+                                <li class="animated bounceInRight delay-6"><h2>Add You-tube Videos to your Slides easily</h2></li>                      
+                      </ul>                   
+                  </div>  -->                  
                 </div> <!-- / .row -->
               </div> <!-- / .container -->          
             </div> <!-- / .item -->
             <!-- Slide #3 -->
-            <div class="item" id="item-3">
+            <div class="item" id="item-3" style="background: #352f44;">
               <div class="container">
                 <div class="row">
 				          <div class="col-sm-6 hidden-xs">
                     <img class="img-responsive animated bounceInDown" src="<?php echo _get_cfg_path('img');?>people-1.png" alt="...">
                   </div>
                   <div class="col-sm-6">
-                    <h1 class="first-child animated slideInRight delay-2">Introducing <strong><span class="text-blue">Beautiful</span></strong> <small>Featured</small></h1>                    
+                    <h1 class="first-child animated slideInRight delay-2">微信 <strong><span class="text-blue">公众号</span></strong> <small>开发</small></h1>                    
                     <ul>
-                      <li class="animated slideInRight delay-4"><i class="fa fa-star"></i> Multi-Purpose Template</li>
-                      <li class="animated slideInDown delay-4"><i class="fa fa-star"></i> Fully Responsive</li>
-                      <li class="animated slideInRight delay-5"><i class="fa fa-star"></i> Easy to Customize</li>
-					            <li class="animated slideInRight delay-6"><i class="fa fa-star"></i> Font Awesome Support</li>
-                    </ul>                    
+                      <li class="animated slideInRight delay-4"><i class="fa fa-star"></i> 微商城 + 微分销</li>
+                      <li class="animated slideInDown delay-4"><i class="fa fa-star"></i> 微营销, 微会员 </li>
+                      <li class="animated slideInRight delay-5"><i class="fa fa-star"></i> 微调研, 微支付</li>
+					            <li class="animated slideInRight delay-6"><i class="fa fa-star"></i> 抽奖、红包、大转盘、投票、刮刮乐、砸金蛋..</li>
+                    </ul>
+                    <a class="btn-animate btn-style btn-lg btn-f btn-primary animated bounceInDown delay-6" href="<?php echo base_url();?>service/wx" title="微商城 微分销 微营销 微会员 微调研 微支付 抽奖 红包 大转盘 投票活动 刮刮乐 砸金蛋">更多&gt;&gt;</a>                 
                   </div>                 
                 </div> <!-- / .row -->
               </div> <!-- / .container -->            
@@ -112,7 +114,7 @@
         <div class="container">
           <div class="row">
 			<div class="col-md-12">
-              <h2 class="lead">Bring goodness in your website</h2>
+              <h2 class="lead">创新 效率 卓越</h2>
             </div>						
           </div> <!-- / .row -->
         </div> <!-- / .container -->		
@@ -256,97 +258,74 @@
         </div> <!-- / .container -->
       </div> <!-- / .Tag Banner -->     
 
-      <!-- Feedback -->
-      <div class="feedbacks">
-        <div class="container">
+      
+  
+      <!-- Call Action -->
+	  <div class="call-actions">
+	    <div class="container">
+		  <div class="row">
+        <div class="col-sm-12">
+          <div class="platform-wrap wrap">
+            <div class="app-faq">
+                <div class="faq-wrap">
+                  <h2 class="uline-title text-center">APP软件开发常见问题</h2>
+                    <p class="title-sec">
+                        FAQ
+                    </p>
+                    <ul>
+                        <li>
+                            <h3><span></span><a href="http://www.sunnsoft.com/faq-661.html" title="谁都能做app？别把app软件开发门槛想得太低">开发一个app多少钱</a></h3>
+                            <p>关于“APP开发需要多少钱”的问题，已经是一个热门的话题来的了，很多需要开发app的用户都很想知道关于开发一款app需要多少钱，今天商侣小编就给大家详细的介绍一下关于手机app开发费用方面的问题。</p>
+                        </li>
+                        <li>
+                            <h3><span></span><a href="http://www.sunnsoft.com/faq-634.html" title="如何建设一个好的网站">如何建设一个好的网站</a></h3>
+                            <p>网站建设是一项复杂的工程，一个好的网站自建设过程中还要有一定的方法才能将其制作成一个好的网站，有着多年经验的广州商侣软件开发公司给大家简单地总结出如何建设一个好的网站。</p>
+                        </li>
+                        <li>
+                            <h3><span></span><a href="http://www.sunnsoft.com/faq-635.html" title="网页设计和网站建设的区别是什么">网页设计和网站建设的区别是什么</a></h3>
+                            <p>一般情况下很多人都觉得网页设计和网站建设是同一个内容，其实在字面上理解我们也会发现网页设计就是对我们平时打开的页面进行设计，其具体包括对页面的文字、声音、图片、视频动画等元素进行设计美化的一项工作。</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- <div class="col-sm-6">
+          <h2 class="uline-title text-center">最新点评</h2>
+                    <p class=" title-sec">
+                        COMMENT
+                    </p>
+
+        </div> -->
+		  </div><!-- / .row -->
+      </div><!-- / .container -->
+	  </div><!-- / .Call Action -->
+  
+      <!-- 资讯 -->
+	  <div class="blog-posts">
+		<div class="container">
           <div class="row">
             <div class="col-sm-12">
-              <h2 class="uline-title text-center">开发资讯</h2>
+              <h2 class="uline-title text-center">最新资讯</h2>
             </div>
           </div> <!-- / .row -->
-          <div class="row">			
-			      <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="feedback">
-				        <img class="img-responsive" src="<?php echo _get_cfg_path('img');?>avatar.jpg" style="width:60px;height:60px;" alt="...">                
-                <span><a href="#">John Smith</a></span>
-				        <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna.
-                  </p>
-                </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="blog-list blog-desc">
+                <ul>
+                  <li><a>11</a></li>
+                  <li><a>22</a></li>
+                  <li><a>33</a></li>
+                  <li><a>44</a></li>
+                </ul>
               </div>
             </div>
-			      <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="feedback">
-				        <img class="img-responsive" src="<?php echo _get_cfg_path('img');?>avatar.jpg" style="width:60px;height:60px;" alt="...">                
-                <span><a href="#">John Smith</a></span>
-				        <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna.
-                  </p>
-                </div>
-              </div>
-            </div>
-			      <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="feedback">
-				        <img class="img-responsive" src="<?php echo _get_cfg_path('img');?>avatar.jpg" style="width:60px;height:60px;" alt="...">                
-                <span><a href="#">John Smith</a></span>
-				        <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna.
-                  </p>
-                </div>
-              </div>
-            </div>
-			     <div class="col-xs-12 col-sm-6 col-md-3">
-              <div class="feedback">
-				        <img class="img-responsive" src="<?php echo _get_cfg_path('img');?>avatar.jpg" style="width:60px;height:60px;" alt="...">                
-                <span><a href="#">John Smith</a></span>
-				        <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="feedback">
-				        <img class="img-responsive" src="<?php echo _get_cfg_path('img');?>avatar.jpg" style="width:60px;height:60px;" alt="...">                
-                <span><a href="#">John Smith</a></span>
-				      <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas tuerpis.
-                  </p>
-                </div>
-              </div>
-            </div>			
-             <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="feedback">
-                <img class="img-responsive" src="<?php echo _get_cfg_path('img');?>avatar.jpg" style="width:60px;height:60px;" alt="...">
-                <span><a href="#">John Smith</a></span>
-				      <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas tuerpis.
-                  </p>
-                </div>
-              </div>
-            </div>
-             <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="feedback">
-                <img class="img-responsive" src="<?php echo _get_cfg_path('img');?>avatar.jpg" style="width:60px;height:60px;" alt="...">
-                <span><a href="#">John Smith</a></span>
-				        <div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed magna vel velit dignissim luctus eu in urna. Dapibus egestas tuerpis.
-                  </p>
-                </div>
-              </div>
-            </div>            
+
+
           </div> <!-- / .row -->
-        </div> <!-- / .container -->
-      </div> <!-- / .feedback -->
-  
-      
+		</div> <!-- / .container -->
+	  </div> <!-- / .博客 -->
 	  
     </div> <!-- / .wrapper -->
 
