@@ -10,12 +10,22 @@ class Home extends CI_Controller {
 
 
 	public function index() {
+        $this->load->model('Article_model');
+
+        $page     = _get_page();//接收前台的页码
+        $pagesize = 4;
+        $arrParam = array();
+        $arrWhere = array();
+
+        $arrParam['orderby'] = 'updatetime DESC';
+        $list = $this->Article_model->fetch_page($page, $pagesize, $arrWhere,'*',$arrParam['orderby']);
 
         $nav = array('page'=>'home',
             'page_title'=>'首页',
             );
         $data = array(
             'nav'=>$nav,
+            'list'=>$list,
             );
         $this->load->view('front/index',$data);
 
@@ -39,6 +49,7 @@ class Home extends CI_Controller {
         $arrParam = array('{money}'=>10,'{order_id}'=>10111);
 
         $this->message_service->send_sys($tpl_id,$receiver,$receiver_type,$arrParam);
+
         
     }
 

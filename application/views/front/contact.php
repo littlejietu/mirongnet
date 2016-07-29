@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>Rooster - Multipurpose Business Theme</title>
+    <title>联系我们 - 米荣网络 创新 效率 卓越</title>
 
     <!-- Bootstrap core CSS -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -48,18 +48,18 @@
           <div class="col-sm-8">
             <h3 class="first-child"><span>留言</span></h3>
             <p style="text-align:center">把您的需求告诉我们，我们为您创造商业价值，打造移动互联的未来。</p>
-            <form role="form">
-			  <div class="form-group">
+            
+			        <div class="form-group">
                 <label for="name">您的姓名</label>
-                <input type="text" class="form-control" id="name" placeholder="请填写您的姓名">
+                <input type="text" class="form-control" id="name" name="name" placeholder="请填写您的姓名">
               </div>
               <div class="form-group">
                 <label for="email">联系方式</label>
-                <input type="email" class="form-control" id="email" placeholder="请填写您的手机/QQ/邮箱">
+                <input type="text" class="form-control" id="contact" name="contact" placeholder="请填写您的手机/QQ/邮箱">
               </div>              
               <div class="form-group">
                 <label for="message">需求/建议</label>
-                <textarea class="form-control" rows="3" id="message" placeholder="请填写您的需求或建议"></textarea>
+                <textarea class="form-control" rows="3" id="message" name="content" placeholder="请填写您的需求或建议"></textarea>
               </div>
              <!--  <div class="form-group">
                 <label for="exampleInputFile">上传文件</label>
@@ -71,8 +71,8 @@
                   <input type="checkbox"> Send a copy to myself
                 </label>
               </div> -->			  
-              <a href="#" type="submit" class="btn-animate btn-style btn-d btn-primary">提交留言</a>
-            </form>
+              <a href="javascript:;" id="btnSumbit" type="submit" class="btn-animate btn-style btn-d btn-primary">提交留言</a>
+            
           </div>
           <div class="col-sm-4">
             <h3 class="second-child"><span>联系我们</span></h3>
@@ -98,36 +98,15 @@
     <?php include("inc/footer.php");?>
   <?php //echo _get_html_cssjs('js','jquery-1.11.0.min.js,bootstrap.min.js,scrolltopcontrol.js,SmoothScroll.js,custom.js','js');?>
  	<script>
-    window.onload = function () {
-        var latlng = new google.maps.LatLng(39.690281,-100.997314);
-         var styles = [{
-            stylers: [{
-                hue: '#2babcf'
-            }, {
-                saturation: -20
-            }]
-        }];
-        var myOptions = {
-            zoom: 5,
-            scrollwheel: false,
-            center: latlng,
-            mapTypeControl: true,
-            mapTypeControlOptions: {
-                style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-            },
-            navigationControl: true,
-            navigationControlOptions: {
-                style: google.maps.NavigationControlStyle.SMALL
-            },
-            styles: styles
-        };
-        map = new google.maps.Map(document.getElementById('google-maps'), myOptions);
-        var marker = new google.maps.Marker({
-          position: latlng,
-          map: map,
-          icon: 'img/logo/mapimg.jpg'
-        });
-    }
+    $('#btnSumbit').on('click', function() {
+      var parram = {name:$('#name').val(),contact:$('#contact').val(),content:$('#message').val()};
+      var result = ajaxMain("<?php echo BASE_SITE_URL.'/contact/save'?>", parram);
+      if(result==1){
+        alert('提交成功，谢谢您的留言');
+        window.location.href='<?php echo BASE_SITE_URL?>';
+      }else
+        alert('请填写留言');
+    });
 </script>
   </body>
 </html>

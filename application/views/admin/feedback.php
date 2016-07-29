@@ -45,11 +45,11 @@
         <tr class="thead">
           <th></th>
           <th>编号</th>
-          <th>用户名</th>
-          <th>手机号</th>
+          <th>名称</th>
+          <th>联系方式</th>
           <th>内容</th>
           <th >添加时间</th>
-          <!-- <th class="align-center">状态</th> -->
+          <th class="align-center">状态</th>
           <th class="align-center" width="10%">操作<?php echo lang('nc_edit');?></th>
         </tr>
       </thead>
@@ -59,14 +59,15 @@
         <tr class="hover">
           <td class="w24"><input type="checkbox" class="checkitem" name="del_id[]" value="<?php echo $v['id']; ?>" /></td>
           <td width="40"><?php echo $v['id']; ?></td>
-          <td width="30"><?php echo $v['user_name']; ?></td>
-          <td width="30"><?php echo $v['mobile']; ?></td>
+          <td width="30"><?php echo $v['name']; ?></td>
+          <td width="30"><?php echo $v['contact']; ?></td>
           <td width="300" class="nowrap"><?php echo $v['content']; ?></td>
           <td width="200"><?php echo date('m-d H:i',$v['addtime']);?></td>
-          <!-- <td width="50" class="align-center nowrap"><?php if($v['status'] ==1 ) echo '显示'; elseif ($v['status'] ==-1) echo '删除';?>
-          </td> -->
+          <td width="50" class="align-center nowrap"><?php if($v['status'] ==1 ) echo '正常'; elseif($v['status'] ==2 ) echo '已处理'; elseif ($v['status'] ==-1) echo '删除';?></td>
           <td width="50" class="w72 align-center">
-          <!-- <a href="<?php echo ADMIN_SITE_URL.'/feedback/add?id='.$v['id'];?>">编辑</a>&nbsp;|&nbsp; -->
+          <?php if($v['status'] ==1):?>
+            <a href="<?php echo ADMIN_SITE_URL.'/feedback/deal?id='.$v['id'];?>">处理</a>&nbsp;|&nbsp;
+          <?php endif;?>
           <a href="<?php echo ADMIN_SITE_URL.'/feedback/del?id='.$v['id'];?>">删除</a></td>
         </tr>
         <?php } ?>

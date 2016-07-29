@@ -38,6 +38,7 @@ class Feedback extends MY_Admin_Controller {
 		$arrWhere['status <>'] = -1;
 		
 		$list = $this->Feedback_model->fetch_page($page, $pagesize, $arrWhere,'*',$strOrder);
+		//print_r($list);die;
 		//var_dump($page, $pagesize);die;
 		//echo $this->db->last_query();die;
 		//$this->load->model('Feedback_Place_Model');
@@ -103,13 +104,13 @@ class Feedback extends MY_Admin_Controller {
 	                $adcode = $oPlace['adcode'];
 	            //将需要保存的数据赋值给数组$data
 	            $data = array(
-	                'user_id'=>$this->input->post('user_id'),
-	                'user_name'=>$this->input->post('user_name'),
-	                'mobile'=>$this->input->post('mobile'),
+	                'id'=>$this->input->post('id'),
+	                'name'=>$this->input->post('name'),
+	                'contact'=>$this->input->post('contact'),
 	                'content'=>$this->input->post('content'),
 	                'addtime'=>time(),
 	                'status'=>$this->input->post('status'),
-	                'platform_id'=>$this->input->post('platform_id'),
+	                //'platform_id'=>$this->input->post('platform_id'),
 	            );
 	    
 	            $id	= $this->input->post('id');
@@ -156,6 +157,21 @@ class Feedback extends MY_Admin_Controller {
 	    	$this->Feedback_model->update_by_id($id,$data);
 			;
 	    }
+	    
+	    //redirect( ADMIN_SITE_URL.'/Feedback' );
+	    header("Location:{$_SERVER['HTTP_REFERER']}");
+	
+	}
+
+	function deal(){
+	    
+	        $id	= $this->input->get('id');
+			$page = _get_page();
+			$data['status'] = 2;
+		// 调用修改状态方法
+	    	$this->Feedback_model->update_by_id($id,$data);
+			;
+	
 	    
 	    //redirect( ADMIN_SITE_URL.'/Feedback' );
 	    header("Location:{$_SERVER['HTTP_REFERER']}");

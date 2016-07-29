@@ -50,3 +50,22 @@ $('.responsive-showcase ul > li > i').on('click', function() {
     $('.responsive-showcase img' + device).addClass("animated fadeIn");
     return false;
 });
+
+function ajaxMain(url,parmArr){
+    if(url != ''){
+        var rel = $.ajax({
+            //dataType:"json",
+            type: "post",
+            url: url,
+            async:false,
+            data:parmArr,
+            success: function (data) {
+                return data;
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            }
+        }).responseText;
+    }
+    return rel;
+}

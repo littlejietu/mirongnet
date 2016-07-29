@@ -211,8 +211,7 @@
                 <h2>全网营销平台</h2>
                 <p class="lead text-muted">
                   帮助企业快速构建与移动互联网用户的全网营销平台: <br />20+营销模块灵活组合，个性化配置，App + 微信商城 + PC网站
-打通淘宝、京东等平台，一站式管理全网营销
-                </p>
+                  打通淘宝、京东等平台，一站式管理全网营销</p>
                 <ul class="col-md-12 col-sm-12 col-xs-12 list-inline">
                   <li><i class="fa fa-mobile text-blue inactive" data-device="#iphone"></i></li>
                   <li><i class="fa fa-tablet text-blue inactive" data-device="#ipad"></i></li>
@@ -311,17 +310,17 @@
             </div>
           </div> <!-- / .row -->
           <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8">
               <div class="blog-list blog-desc">
                 <ul>
-                  <li><a>11</a></li>
-                  <li><a>22</a></li>
-                  <li><a>33</a></li>
-                  <li><a>44</a></li>
+                <?php foreach($list['rows'] as $k => $v): ?>
+                  <li><a href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>"><?php echo $v['title']?></a></li>
+                <?php endforeach; ?>
                 </ul>
               </div>
             </div>
-
+            <div class="col-sm-2"></div>
 
           </div> <!-- / .row -->
 		</div> <!-- / .container -->
