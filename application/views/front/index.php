@@ -329,8 +329,8 @@
     </div> <!-- / .wrapper -->
 
   <?php include("inc/footer.php");?>
-  <?php echo _get_html_cssjs('js','jquery-1.11.0.min.js,bootstrap.min.js,scrolltopcontrol.js','js');?>
-  <?php echo _get_html_cssjs('js','SmoothScroll.js,lightbox-2.6.min.js,custom.js,index.js','js');?>
+  <?php echo _get_html_cssjs('js','bootstrap.min.js,scrolltopcontrol.js','js');?>
+  <?php echo _get_html_cssjs('js','SmoothScroll.js,lightbox-2.6.min.js,index.js','js');?>
 
   </body>
 </html>
