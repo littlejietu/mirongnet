@@ -96,21 +96,7 @@
     </div> <!-- / .wrapper -->
 
     <?php include("inc/footer.php");?>
-	
-	<!-- Copyright -->
-	<div class="copyrights">
-		<div class="container">
-		  <div class="row">
-			<div class="col-sm-12">
-			  <div class="copyright">
-				<small>Copyright &copy; 2015.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></small>
-			  </div>
-			</div>
-		  </div> <!-- / .row -->
-		</div> <!-- / .container --> 
-	</div><!-- / .Copyright -->
-
-  <?php echo _get_html_cssjs('js','jquery-1.11.0.min.js,bootstrap.min.js,scrolltopcontrol.js,SmoothScroll.js,custom.js','js');?>
+  <?php //echo _get_html_cssjs('js','jquery-1.11.0.min.js,bootstrap.min.js,scrolltopcontrol.js,SmoothScroll.js,custom.js','js');?>
  	<script>
     window.onload = function () {
         var latlng = new google.maps.LatLng(39.690281,-100.997314);

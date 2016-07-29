@@ -76,8 +76,8 @@
 
     <!-- Footer -->
     <?php include("inc/footer.php");?>
-    <?php echo _get_html_cssjs('js','jquery-1.11.0.min.js,bootstrap.min.js,scrolltopcontrol.js,SmoothScroll.js','js');?>
-    <?php echo _get_html_cssjs('js','lightbox-2.6.min.js,jquery.isotope.js,custom.js,portfolio.js','js');?>
+    <?php echo _get_html_cssjs('js','bootstrap.min.js,scrolltopcontrol.js,SmoothScroll.js','js');?>
+    <?php echo _get_html_cssjs('js','lightbox-2.6.min.js,jquery.isotope.js','js');?>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -78,7 +78,7 @@
                     </div>
 
                 </div>
-                <div class="pf_block clearfix">
+                <!-- <div class="pf_block clearfix">
 
                     <div class="pf_blockLeft">
                         <h3>企业开发微信公众号的优势</h3>
@@ -111,7 +111,7 @@
                             <p>全面营销趋势：微信营销是众多企业的选择；</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="pf_title_two">
                     <h2>
                         微信公众号
