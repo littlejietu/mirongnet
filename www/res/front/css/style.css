@@ -6902,7 +6902,7 @@ body {
   /* navbar height + margin */
   margin-bottom: -358px;
   /* footer height + margin */
-  padding-bottom: 379px;
+  padding-bottom: 358px;
   /* footer height + margin */
 }
 /* ===== Homepage Slider ===== */
@@ -8096,9 +8096,9 @@ footer .form-control {
 }  
 
 
-
+.title-sec{text-align:center;font-size:14px;color:#888;margin-top:10px;}
 .platform-wrap .app-faq{padding:0px 0 10px}
-.platform-wrap .app-faq .faq-wrap{width:1000px;margin:0 auto}
+.platform-wrap .app-faq .faq-wrap{width:100%;margin:0 auto}
 .platform-wrap .app-faq .faq-wrap .title{text-align:center}
 .platform-wrap .app-faq .faq-wrap .title-con{text-align:center}
 .platform-wrap .app-faq .faq-wrap .title a{font-size:28px;color:#3f3f3f}
@@ -8250,4 +8250,8 @@ footer .form-control {
 .e-supplier-wrap .e-supplier-content .e-supplie-list ul .right h3{clear:both;text-align:right}
 .e-supplier-wrap .e-supplier-content .e-supplie-list ul .right p{float:right}
 .e-supplier-wrap .e-supplier-content .e-supplie-list ul .bottom{margin-top:270px}
+
+.blog-list ul li{width: 50%;list-style: none; float: left;}
+.blog-list ul li a{padding:10px;}
+.img-v-m img{vertical-align: middle;}
 
