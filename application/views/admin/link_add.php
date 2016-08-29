@@ -10,7 +10,7 @@
 <?php echo _get_html_cssjs('admin_css','perfect-scrollbar.min.css','css');?>
 
 <?php echo _get_html_cssjs('admin',TPL_ADMIN_NAME.'css/font-awesome.min.css','css');?>
-<?php echo _get_html_cssjs('lib','uploadify/uploadify.css','css');?> <!!--添加图片的样式-->
+<?php echo _get_html_cssjs('lib','uploadify/uploadify.css','css');?>
 
 <!--[if IE 7]>
   <?php echo _get_html_cssjs('admin',TPL_ADMIN_NAME.'css/font-awesome-ie7.min.css','css');?>

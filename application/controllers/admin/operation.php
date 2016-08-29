@@ -34,7 +34,7 @@ class Operation extends MY_Admin_Controller {
 	    {
 	        $data = array(
 	            'site_name'=>$this->input->post('site_name'),
-	            // 'activity_url'=>$this->input->post('activity_url'),
+	            'is_html'=>$this->input->post('is_html'),
 	            // 'order_commis_day'=>$this->input->post('order_commis_day'),
 	            // 'distribute_rate_1'=>$this->input->post('distribute_rate_1'),
 	            // 'distribute_rate_2'=>$this->input->post('distribute_rate_2'),
@@ -50,9 +50,49 @@ class Operation extends MY_Admin_Controller {
 	            // 'start_ad_time'=>$this->input->post('start_ad_time'),
 	            // 'order_confirm_day'=>$this->input->post('order_confirm_day'),
 	            );
-	            $this->Wordbook_model->updateSetting($data);
+	        $this->Wordbook_model->updateSetting($data);
 	            
-	            redirect(ADMIN_SITE_URL.'/operation');
-	        }
+            redirect(ADMIN_SITE_URL.'/operation');
+        }
+    }
+
+/*
+    public function html_setting(){
+    	$this->lang->load('admin_layout');
+
+    	$result = $this->Wordbook_model->get_list();
+		$list = array();
+		foreach ($result as $key=>$value)
+		{
+		    $list[$value['k']] = $value['val'];
+		}
+
+    	$data = array(
+    		'list'=>$list,
+    		);
+    	$this->load->view('admin/html_setting',$data);
+
+    }
+
+    public function html_setting_save(){
+    	if ($this->input->is_post())
+	    {
+	    	$data = array(
+	            'html_home'=>$this->input->post('html_home'),
+	            'html_service'=>$this->input->post('html_service'),
+	            'html_solution'=>$this->input->post('html_solution'),
+	            'html_cases'=>$this->input->post('html_cases'),
+	            'html_about'=>$this->input->post('html_about'),
+
+	            'html_news'=>$this->input->post('html_news'),
+	            'html_news_list'=>$this->input->post('html_news_list'),
+	            'html_news_detail'=>$this->input->post('html_news_detail'),
+	        );
+
+	    	$this->Wordbook_model->updateSetting($data);
 	    }
+
+	    redirect(ADMIN_SITE_URL.'/operation/html_setting');
+    }
+    */
 }
