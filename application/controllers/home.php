@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends MY_Controller {
 
 	public function __construct()
     {
@@ -12,13 +12,7 @@ class Home extends CI_Controller {
 	public function index() {
         $this->load->model('Article_model');
 
-        $page     = _get_page();//接收前台的页码
-        $pagesize = 4;
-        $arrParam = array();
-        $arrWhere = array();
-
-        $arrParam['orderby'] = 'updatetime DESC';
-        $list = $this->Article_model->fetch_page($page, $pagesize, $arrWhere,'*',$arrParam['orderby']);
+        $list = $this->Article_model->get_list('status=1 and class_id=21','*','updatetime desc',6);
 
         $nav = array('page'=>'home',
             'page_title'=>'首页',
@@ -28,7 +22,6 @@ class Home extends CI_Controller {
             'list'=>$list,
             );
         $this->load->view('front/index',$data);
-
     }
 
 
