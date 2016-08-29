@@ -397,4 +397,5 @@ function cutStr($content, $len){
 	return $result;
 }
 
+
 ?>

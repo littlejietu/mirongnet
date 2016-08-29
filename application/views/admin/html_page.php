@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>big city</title>
+<title><?php echo C('site_name')?></title>
 <?php echo _get_html_cssjs('admin_js','jquery.js,jquery.validation.min.js,admincp.js,jquery.cookie.js,common.js','js');?>
 <link href="<?php echo _get_cfg_path('admin').TPL_ADMIN_NAME;?>css/skin_0.css" type="text/css" rel="stylesheet" id="cssfile" />
 <?php echo _get_html_cssjs('admin_css','perfect-scrollbar.min.css','css');?>
@@ -22,54 +22,45 @@
 <div class="page">
   <div class="fixed-bar">
     <div class="item-title">
-      <h3><?php echo lang('nc_operation_set')?></h3>
+      <h3>更新栏目</h3>
       <ul class="tab-base">
-        <li><a href="JavaScript:void(0);" class="current"><span><?php echo lang('nc_operation_set');?></span></a></li>
-        
+        <li><a href="JavaScript:void(0);" class="current"><span>更新栏目</span></a></li>
+        <li><a href="<?php echo ADMIN_SITE_URL.'/html_page/news';?>"><span>更新文章</span></a></li>
       </ul>
     </div>
   </div>
   <div class="fixed-empty"></div>
-  <form method="post" name="settingForm" id="settingForm" action="<?php echo ADMIN_SITE_URL.'/operation/save'?>">
+  <form method="post" name="settingForm" id="settingForm" action="<?php echo ADMIN_SITE_URL.'/html_page/make_nav'?>" target="resultIframe">
     <input type="hidden" name="form_submit" value="ok" />
     <table class="table tb-type2">
       <tbody>
-        <tr>
-          <td colspan="2" class="required">站点名称: </td>
-        </tr>
         <tr class="noborder">
-          <td class="vatop rowform">
-            <input id="site_name" name="site_name"  value="<?php if(!empty($list['site_name'])){ echo $list['site_name'];}else {echo 0;}?>" type="text" >
+          <td>选择栏目:</td>
+          <td class="vatop rowform onoff">
+            <select name="path">
+              <option value="all">全部</option>
+              <?php foreach($list as $v):?>
+                <option value="<?php echo $v['path']?>"><?php echo $v['name']?></option>
+              <?php endforeach;?>
+            </select>
           <td class="vatop tips"></td>
         </tr>
-        <tr>
-          <td colspan="2" class="required">开启静态: </td>
-        </tr>
-        <tr class="noborder">
-          <td class="vatop rowform">
-            <label><input type="radio" name="is_html" value="1"<?php echo !empty($list['is_html'])?' checked':''?> >开启</label>
-            <label><input type="radio" name="is_html" value="0"<?php echo empty($list['is_html'])?' checked':''?> >不开启</label>
-          <td class="vatop tips"></td>
-        </tr>
-        
+
       </tbody>
       <tfoot>
         <tr>
-          <td colspan="2" ><a href="JavaScript:void(0);" class="btn" id="submitBtn"><span><?php echo lang('nc_submit');?></span></a></td>
+          <td colspan="3" ><a href="JavaScript:void(0);" class="btn" id="submitBtn"><span><?php echo lang('nc_submit');?></span></a></td>
         </tr>
       </tfoot>
     </table>
   </form>
+  <iframe name="resultIframe" src="" width="600" height="300" frameborder="0"></iframe>
 </div>
+
 
 <script src="<?php echo _get_cfg_path('lib')?>uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-<?php $timestamp = time();?>
-$(function() {
-  upload_file('start_ad','start_ad','<?php echo $timestamp?>','<?php echo md5($this->config->item('encryption_key') . $timestamp );?>');
-});
-</script>
+
 <script>
 
 $(function(){$("#submitBtn").click(function(){

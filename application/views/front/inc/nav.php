@@ -9,28 +9,38 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo base_url();?>">米荣网络</a>
+          <a class="navbar-brand" href="<?php echo base_url();?>"><?php echo C('site_name');?></a>
         </div>
         <div class="collapse navbar-collapse">        
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown<?php if($nav['page']=='home') echo ' active'; ?>">
-              <a href="<?php echo base_url();?>">首页</a>
-            </li>
-            <li class="dropdown <?php if($nav['page']=='service') echo ' active'; ?>">
-              <a href="<?php echo base_url();?>service">APP开发服务</a>
-            </li>
-            <li class="dropdown<?php if($nav['page']=='solution') echo ' active'; ?>">
-              <a href="<?php echo base_url();?>solution">APP解决方案</a>
-            </li>
-            <li class="dropdown<?php if($nav['page']=='cases') echo ' active'; ?>">
-              <a href="<?php echo base_url();?>cases">APP开发案例</a>
-            </li>
-            <li class="dropdown<?php if($nav['page']=='news') echo ' active'; ?>">
-              <a href="<?php echo base_url();?>news">APP开发资讯</a>
-            </li>
-            <li class="dropdown<?php if($nav['page']=='about') echo ' active'; ?>">
-              <a href="<?php echo base_url();?>about">关于米荣</a>
-            </li>
+            <?php if(empty($this->NAV_LIST)):?>
+              <li class="dropdown<?php if($nav['page']=='home') echo ' active'; ?>">
+                <a href="<?php echo base_url();?>">首页</a>
+              </li>
+              <li class="dropdown <?php if($nav['page']=='service') echo ' active'; ?>">
+                <a href="<?php echo base_url('service');?>">APP开发服务</a>
+              </li>
+              <li class="dropdown<?php if($nav['page']=='solution') echo ' active'; ?>">
+                <a href="<?php echo base_url('solution');?>">APP解决方案</a>
+              </li>
+              <li class="dropdown<?php if($nav['page']=='cases') echo ' active'; ?>">
+                <a href="<?php echo base_url('cases');?>">APP开发案例</a>
+              </li>
+              <li class="dropdown<?php if($nav['page']=='news') echo ' active'; ?>">
+                <a href="<?php echo base_url('news');?>">APP开发资讯</a>
+              </li>
+              <li class="dropdown<?php if($nav['page']=='about') echo ' active'; ?>">
+                <a href="<?php echo base_url('about');?>">关于米荣</a>
+              </li>
+            <?php else:?>
+              <?php foreach($this->NAV_LIST as $v):?>
+              <li class="dropdown<?php if($nav['page']==$v['path']) echo ' active'; ?>">
+                <a href="<?php echo base_url($v['path']).get_html_ext($v['path']);?>"<?php echo $v['is_blank']?'target="_blank"':'';?>><?php echo $v['name']?></a>
+              </li>
+              <?php endforeach;?>
+            <?php endif;?>
+            
+            
             <!-- Navbar Search -->
             <li class="hidden-xs" id="navbar-search">
               <a href="#">

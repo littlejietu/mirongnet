@@ -1,9 +1,8 @@
 $(document).ready(function(){
     var ajax_url = window.location.pathname+'/ajax';
-    
+
 	//给需要修改的位置添加修改行为
 	$('span[nc_type="inline_edit"]').click(function(){
-		return;
 		var s_value  = $(this).text();
 		var s_name   = $(this).attr('fieldname');
 		var s_id     = $(this).attr('fieldid');
@@ -45,7 +44,7 @@ $(document).ready(function(){
 							//id 修改内容索引标识
 							//column 修改字段名
 							//value 修改内容
-                            $.get(ajax_url,{branch:ajax_branch,id:s_id,column:s_name,value:$(this).attr('value')},function(data){
+                            $.get('index.php?act='+act+'&op=ajax',{branch:ajax_branch,id:s_id,column:s_name,value:$(this).attr('value')},function(data){
                                 if(data === 'false')
                                 {
                                     alert('名称已经存在，请您换一个');
@@ -79,8 +78,7 @@ $(document).ready(function(){
 						}
 					}
 					$(this).prev('span').show().text($(this).attr('value'));
-					$.get('index.php?act='+act+'&op=ajax',{branch:ajax_branch,id:s_id,column:s_name,value:$(this).attr('value')},function(data){
-						alert(data);
+					$.get(ajax_url,{branch:ajax_branch,id:s_id,column:s_name,value:$(this).attr('value')},function(data){
 						if(data === 'false')
 							{
 								alert('名称已经存在，请您换一个');
@@ -92,8 +90,8 @@ $(document).ready(function(){
 				});
 		$(this).hide();
 	});
-	
-	
+
+
 		$('span[nc_type="inline_edit_textarea"]').click(function(){
 		var s_value  = $(this).text();
 		var s_name   = $(this).attr('fieldname');
@@ -136,7 +134,7 @@ $(document).ready(function(){
 							//id 修改内容索引标识
 							//column 修改字段名
 							//value 修改内容
-                            $.get('index1.php?act='+act+'&op=ajax',{branch:ajax_branch,id:s_id,column:s_name,value:$(this).attr('value')},function(data){
+                            $.get('index.php?act='+act+'&op=ajax',{branch:ajax_branch,id:s_id,column:s_name,value:$(this).attr('value')},function(data){
                                 if(data === 'false')
                                 {
                                     alert('名称已经存在，请您换一个');
@@ -170,7 +168,7 @@ $(document).ready(function(){
 						}
 					}
 					$(this).prev('span').show().text($(this).attr('value'));
-					$.get('index2.php?act='+act+'&op=ajax',{branch:ajax_branch,id:s_id,column:s_name,value:$(this).attr('value')},function(data){
+					$.get('index.php?act='+act+'&op=ajax',{branch:ajax_branch,id:s_id,column:s_name,value:$(this).attr('value')},function(data){
 						if(data === 'false')
 							{
 								alert('名称已经存在，请您换一个');
@@ -182,18 +180,17 @@ $(document).ready(function(){
 				});
 		$(this).hide();
 	});
-	
+
 	//给需要修改的图片添加异步修改行为
 	$('img[nc_type="inline_edit"]').click(function(){
-
 		var i_id    = $(this).attr('fieldid');
 		var i_name  = $(this).attr('fieldname');
 		var i_src   = $(this).attr('src');
 		var i_val   = ($(this).attr('fieldvalue'))== 0 ? 1 : 0;
 		var ajax_branch      = $(this).attr('ajax_branch');
 
-		$.get('index3.php?act='+act+'&op=ajax',{branch:ajax_branch,id:i_id,column:i_name,value:i_val},function(data){
-		if(data == 'true')
+		$.get(ajax_url,{branch:ajax_branch,id:i_id,column:i_name,value:i_val},function(data){
+		if(data == 1)
 			{
 				if(i_val == 0)
 				{
@@ -206,7 +203,8 @@ $(document).ready(function(){
 			}
 		});
 	});
-	$('a[nc_type="inline_edit"]').click(function(){
+
+	$('a[nc_type="inline_edit"]').live('click', function() {
 		var i_id    = $(this).attr('fieldid');
 		var i_name  = $(this).attr('fieldname');
 		var i_src   = $(this).attr('src');
@@ -214,7 +212,7 @@ $(document).ready(function(){
 		var ajax_branch      = $(this).attr('ajax_branch');
 
 		$.get(ajax_url,{branch:ajax_branch,id:i_id,column:i_name,value:i_val},function(data){
-		if(data == 'true')
+		if(data == 1)
 			{
 				if(i_val == 0){
 					$('a[fieldid="'+i_id+'"][fieldname="'+i_name+'"]').attr({'class':('enabled','disabled'),'title':('开启','关闭'),'fieldvalue':i_val});
@@ -227,10 +225,10 @@ $(document).ready(function(){
 		});
 	});
     //给每个可编辑的小图片的父元素添加可编辑标题 $('img[nc_type="inline_edit"]').parent().attr('title','可编辑');
-   
+
     //给列表有排序行为的列添加鼠标手型效果
     $('span[nc_type="order_by"]').hover(function(){$(this).css({cursor:'pointer'});},function(){});
-	
+
 });
 //检查提交内容的必须项
 function required(str,s_value,jqobj)
@@ -322,12 +320,12 @@ function check_max(str,s_value,max,jqobj)
 //$('span[nc_type="class_sort"]').inline_edit({act: 'microshop',op: 'update_class_sort'});
 //html
 //<span nc_type="class_sort" column_id="<?php echo $val['class_id'];?>" title="<?php echo $lang['nc_editable'];?>" class="editable tooltip"><?php echo $val['class_sort'];?></span>
-//php 
+//php
 //$result = array();
 //$result['result'] = FALSE;/TURE
 //$result['message'] = '错误';
 //echo json_encode($result);
- 
+
 (function($) {
  $.fn.inline_edit= function(options) {
      var settings = $.extend({}, {open: false}, options);
@@ -339,6 +337,7 @@ function check_max(str,s_value,max,jqobj)
          var span = $(this);
          var old_value = $(this).html();
          var column_id = $(this).attr("column_id");
+         var s_name   = $(this).attr('fieldname');
          $('<input type="text">')
          .insertAfter($(this))
          .focus()
@@ -347,13 +346,13 @@ function check_max(str,s_value,max,jqobj)
          .blur(function(){
              var new_value = $(this).attr("value");
              if(new_value != '') {
-                 $.get('index4.php?act='+settings.act+'&op='+settings.op+'&branch=ajax',{id:column_id,value:new_value},function(data){
+                 $.get('index.php?act='+settings.act+'&op='+settings.op,{branch:s_name,id:column_id,value:new_value},function(data){
                      data = $.parseJSON(data);
                      if(data.result) {
                          span.show().text(new_value);
                      } else {
                          span.show().text(old_value);
-                         alert(data.message);
+                         if (typeof(data.message) != 'undefined') alert(data.message);
                      }
                  });
              } else {
@@ -380,6 +379,7 @@ function check_max(str,s_value,max,jqobj)
          var $input = $('<input type="text">');
          var $btn_submit = $('<a class="inline-edit-submit" href="JavaScript:;">确认</a>');
          var $btn_cancel = $('<a class="inline-edit-cancel" href="JavaScript:;">取消</a>');
+         var s_name   = $(this).attr('fieldname');
 
          $input.insertAfter($span).focus().select().val(old_value);
          $btn_submit.insertAfter($input);
@@ -389,12 +389,12 @@ function check_max(str,s_value,max,jqobj)
          $btn_submit.click(function(){
              var new_value = $input.attr("value");
              if(new_value !== '' && new_value !== old_value) {
-                 $.post('index5.php?act=' + settings.act + '&op=' + settings.op, {id:column_id, value:new_value}, function(data) {
+                 $.post('index.php?act=' + settings.act + '&op=' + settings.op, {branch:s_name,id:column_id, value:new_value}, function(data) {
                      data = $.parseJSON(data);
                      if(data.result) {
                          $span.text(new_value);
                      } else {
-                         alert(data.message);
+                         if (typeof(data.message) != 'undefined') alert(data.message);
                      }
                  });
              }
@@ -414,5 +414,3 @@ function check_max(str,s_value,max,jqobj)
      }
 };
 })(jQuery);
-
-

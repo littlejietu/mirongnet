@@ -28,6 +28,7 @@
  * @link		http://codeigniter.com/user_guide/general/controllers.html
  */
 class MY_Controller extends CI_Controller{
+    public $NAV_LIST = null;
 
 	/**
 	 * Constructor
@@ -35,6 +36,12 @@ class MY_Controller extends CI_Controller{
 	public function __construct()
 	{
 		parent::__construct();
+
+        $this->load->model('nav_model');
+        $this->NAV_LIST = $this->nav_model->getList();
+
+        
+
 		// if (substr($this->uri->uri_string,0,8) == 'modules/')
 		// {
 		// 	header('location:/');exit;
@@ -45,6 +52,7 @@ class MY_Controller extends CI_Controller{
 		// }
 		// $this->view->assign('assets_url', config_item('assets_url'));
 	}
+
 }
 
 // END Controller class
@@ -266,7 +274,7 @@ class MY_Admin_Controller extends CI_Controller {
                 array('name'=>'分佣记录', 'op'=>'index', 'act'=>'invite'),
                 array('name'=>'分佣关系', 'op'=>'userlist', 'act'=>'invite'),
                 array('name'=>'客服',     'op'=>'index', 'act'=>'service'),
-                array('name'=>'意见反馈',     'op'=>null, 'act'=>'feedback'),
+                array('name'=>'意见反馈1',     'op'=>null, 'act'=>'feedback'),
                 //array('name'=>'代金券', 	'op'=>null, 'act'=>'voucher'),
                 //array('name'=>'结算管理', 'op'=>null, 'act'=>'bill'),
                 //array('name'=>'虚拟订单结算', 'op'=>null, 'act'=>'vr_bill'),

@@ -13,6 +13,8 @@ class XT_Model extends CI_Model {
 	
 	protected $mTable;
 	protected $mPkId = 'id';
+	protected $mCache;
+	protected $mCache_list;
 	
 	public function __construct(){
 		$this->db = _get_db('default');
@@ -80,6 +82,11 @@ class XT_Model extends CI_Model {
      */
 	public function insert($data)
 	{
+		if(!empty($this->mCache))
+			dkcache($this->mCache);
+		if(!empty($this->mCache_list))
+			dkcache($this->mCache_list);
+
 		$sql = $this->db->insert_string($this->mTable, $data);
 		$sql = 'INSERT IGNORE '.ltrim($sql,'INSERT');
 
@@ -98,6 +105,11 @@ class XT_Model extends CI_Model {
 	 */
 	public function insert_string($data)
 	{
+		if(!empty($this->mCache))
+			dkcache($this->mCache);
+		if(!empty($this->mCache_list))
+			dkcache($this->mCache_list);
+
 		$sql = $this->db->insert_string($this->mTable, $data);
 		$this->db->query($sql);
 		$id =  $this->db->insert_id();
@@ -106,6 +118,11 @@ class XT_Model extends CI_Model {
 
 	public function insert_ignore($data)
 	{
+		if(!empty($this->mCache))
+			dkcache($this->mCache);
+		if(!empty($this->mCache_list))
+			dkcache($this->mCache_list);
+
 		$sql = $this->db->insert_string($this->mTable, $data);
 		$sql = 'INSERT IGNORE '.ltrim($sql,'INSERT');
 		$this->db->query($sql);
@@ -178,6 +195,11 @@ class XT_Model extends CI_Model {
 	 */
 	public function delete_by_id($id)
 	{
+		if(!empty($this->mCache))
+			dkcache($this->mCache);
+		if(!empty($this->mCache_list))
+			dkcache($this->mCache_list);
+
 		if (!is_array($id))
 		{
 			$id = array($id);
@@ -191,6 +213,11 @@ class XT_Model extends CI_Model {
 	 */
 	public function delete_by_where($where)
 	{
+		if(!empty($this->mCache))
+			dkcache($this->mCache);
+		if(!empty($this->mCache_list))
+			dkcache($this->mCache_list);
+		
 		return $this->db->where($where)->delete($this->mTable);
 	}
 	
@@ -201,6 +228,11 @@ class XT_Model extends CI_Model {
 	 */
 	public function update_by_id($id, $data)
 	{
+		if(!empty($this->mCache))
+			dkcache($this->mCache);
+		if(!empty($this->mCache_list))
+			dkcache($this->mCache_list);
+
 		$where = array($this->mPkId=> $id);
 		$sql = $this->db->update_string($this->mTable, $data, $where);
 		return $this->db->query($sql);
@@ -214,6 +246,11 @@ class XT_Model extends CI_Model {
 	 */
 	public function update_by_where($where, $data)
 	{
+		if(!empty($this->mCache))
+			dkcache($this->mCache);
+		if(!empty($this->mCache_list))
+			dkcache($this->mCache_list);
+		
 		if (!$where)return false;
 		if(!is_array($where))
 			$this->db->where($where);
@@ -247,6 +284,16 @@ class XT_Model extends CI_Model {
 			$this->db->set($key, $val, FALSE);
 		}
 		$this->db->update($this->mTable);
+	}
+
+	public function get_list_cache(){
+		$list = rkcache($this->mCache_list);
+		if(!$list){
+			$list = $this->get_list();
+			wkcache($this->mCache_list, $list);
+		}
+
+		return $list;
 	}
 
 	/**
