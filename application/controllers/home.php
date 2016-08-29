@@ -13,7 +13,7 @@ class Home extends CI_Controller {
         $this->load->model('Article_model');
 
         $page     = _get_page();//接收前台的页码
-        $pagesize = 4;
+        $pagesize = 8;
         $arrParam = array();
         $arrWhere = array();
 

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>Rooster - Multipurpose Business Theme</title>
+    <title><?php echo $info['title']?> - 开发资讯 - 米荣网络 创新 效率 卓越</title>
 
     <!-- Bootstrap core CSS -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -43,12 +43,12 @@
               <img src="<?php echo _get_cfg_path('img');?>avatar.jpg" alt="...">
               <div class="blog-desc">
                 <h3>
-                  <a href="blog-post.html"><?php echo $info['title']?></a>
+                  <?php echo $info['title']?>
                 </h3>
                 <hr>
                 <p class="text-muted"><?php echo date('Y-m-d H:i',$info['addtime']); ?></p>                
                 <img class="img-responsive" src="/<?php echo $info['pic'];?>" alt="...">
-                <p><?php echo $info['content'];?></p>
+                <p><?php echo htmlspecialchars_decode($info['content']);?></p>
               </div>
             </div>
             <!-- Pagination -->

@@ -32,13 +32,12 @@
             <h4>案例集</h4>
 			<div class="gallery clearfix">
 			 <ul class="list-unstyled img-v-m">
-			  <li><a href="#"><img src="<?php echo _get_cfg_path('img');?>case_01.jpg" style="width:60px;height:60px;" alt="..."></a></li>
-				<li><a href="#"><img src="<?php echo _get_cfg_path('img');?>case_02.jpg" style="width:60px;height:60px;" alt="..."></a></li>
-				<li><a href="#"><img src="<?php echo _get_cfg_path('img');?>case_03.jpg" style="width:60px;height:60px;" alt="..."></a></li>
-				<li><a href="#"><img src="<?php echo _get_cfg_path('img');?>case_04.jpg" style="width:60px;height:60px;" alt="..."></a></li>
-				<li><a href="#"><img src="<?php echo _get_cfg_path('img');?>case_05.jpg" style="width:60px;height:60px;" alt="..."></a></li>
-				<li><a href="#"><img src="<?php echo _get_cfg_path('img');?>case_06.jpg" style="width:60px;height:60px;" alt="..."></a></li>
-								
+			  <li><a href="<?php echo base_url();?>cases"><img src="<?php echo _get_cfg_path('img');?>case_01.jpg" style="width:60px;height:60px;" alt="..."></a></li>
+			  <li><a href="<?php echo base_url();?>cases"><img src="<?php echo _get_cfg_path('img');?>case_02.jpg" style="width:60px;height:60px;" alt="..."></a></li>
+			  <li><a href="<?php echo base_url();?>cases"><img src="<?php echo _get_cfg_path('img');?>case_03.jpg" style="width:60px;height:60px;" alt="..."></a></li>
+			  <li><a href="<?php echo base_url();?>cases"><img src="<?php echo _get_cfg_path('img');?>case_04.jpg" style="width:60px;height:60px;" alt="..."></a></li>
+			  <li><a href="<?php echo base_url();?>cases"><img src="<?php echo _get_cfg_path('img');?>case_05.jpg" style="width:60px;height:60px;" alt="..."></a></li>
+			  <li><a href="<?php echo base_url();?>cases"><img src="<?php echo _get_cfg_path('img');?>case_06.jpg" style="width:60px;height:60px;" alt="..."></a></li>
 			 </ul>
 			</div>
           </div><!-- / .Recent Tweets -->

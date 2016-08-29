@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>服务 - 杭州米荣网络科技有限公司</title>
+    <title>开发服务 - 米荣网络 创新 效率 卓越</title>
 
     <?php echo _get_html_cssjs('css','style.css,font-awesome.min.css,animate.css','css');?>
     <?php echo _get_html_cssjs('font','PT+Sans+Narrow/pt.css','css');?>
@@ -45,8 +45,8 @@
                 <div class="service-item" title="助力企业快速实现移动化战略布局">
                   <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/ios'"><i class="fa fa-apple"></i></span>
                   <div class="service-desc">
-                    <h4><b><a href="<?php echo base_url();?>service/ios">IOS开发</a></b></h4>
-                    <p>提供一站式的IOS手机APP定制开发服务</p>
+                    <h4><b><a href="<?php echo base_url();?>service/ios">iOS开发</a></b></h4>
+                    <p>提供一站式的iOS手机APP定制开发服务</p>
                   </div>
                 </div>
               </div> <!-- / .services -->
@@ -152,7 +152,7 @@
                         </p>
                     </div>
                     <p>
-                    我们提供超过5种主流开发服务，IOS开发、android开发，微信开发、html5开发、商城开发。
+                    我们提供超过5种主流开发服务，iOS开发、android开发，微信开发、html5开发、商城开发。
                     </p>
 
                 </div>
@@ -165,7 +165,7 @@
                                 <td class="top-td ios">
                                     <img src="<?php echo _get_cfg_path('img');?>ios-icon.png">
                                     <p>
-                                        IOS平台
+                                        iOS平台
                                     </p>
                                 </td>
                                 <td class="top-td android">

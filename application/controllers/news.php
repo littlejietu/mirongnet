@@ -42,6 +42,10 @@ class News extends MY_Controller
         $this->pagination->initialize($pagecfg);
         $list['pages'] = $this->pagination->create_links();
 
+        $class_name = '';
+        $classInfo = $this->Article_Class_model->get_by_id($class_id);
+        if(!empty($classInfo))
+            $class_name = $classInfo['name'];
         $parent_id = 21;
         $where = array('status <>'=>-1,'parent_id'=>$parent_id);
         $p = $this->Article_Class_model->get_list($where,'parent_id');
@@ -66,12 +70,15 @@ class News extends MY_Controller
 
     	$nav = array('page'=>'news',
     		'page_title'=>'APP开发资讯',
+            'class_name'=>$class_name,
+
     		);
         
         $data = array(
             'nav'=>$nav,
             'list'=>$list,
             'list_class'=>$list_class,
+            
             );
 
     	$this->load->view('front/news',$data);

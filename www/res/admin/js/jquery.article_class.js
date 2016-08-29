@@ -45,7 +45,7 @@ $(document).ready(function(){
 						
 						//操作
 						src += "<td class='w84'>";
-						src += "<span><a href='index.php?act=article_class&op=article_class_edit&ac_id="+data[i].ac_id+"'>编辑</a>";
+						src += "<span><a href='"+ADMIN_SITE_URL+"/article_class/edit?id="+data[i].ac_id+"'>编辑</a>";
 						src += " | <a href=\"javascript:if(confirm('删除该分类将会同时删除该分类的所有下级分类，您确定要删除吗'))window.location = 'index.php?act=article_class&op=article_class_del&ac_id="+data[i].ac_id+"';\">删除</a>";
 						src += "</td>";
 						src += "</tr>";

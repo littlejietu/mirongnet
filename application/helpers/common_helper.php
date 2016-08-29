@@ -389,5 +389,12 @@ function dkcache($key)
 
 /***------------------cache end-------------------------------***/
 
+function cutStr($content, $len){
+	$result = $content;
+	if(mb_strlen($content,'utf-8')>$len) 
+		$result = mb_substr($content,0,$len,'utf-8').'..';
+	
+	return $result;
+}
 
 ?>

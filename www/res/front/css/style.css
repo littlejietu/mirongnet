@@ -7414,7 +7414,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   color: #999999;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   text-decoration: none;
 }
 .panel-body > ul > li > a:hover {
@@ -8002,7 +8002,7 @@ footer a:hover {
 
 .gallery li:after {
     color: #2babcf;
-    content: "\f004";
+    /*content: "\f004";*/
     font-family: 'FontAwesome';
     font-size: 18px;
     left: 0;

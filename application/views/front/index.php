@@ -134,8 +134,8 @@
                 <div class="service-item" title="助力企业快速实现移动化战略布局">
                   <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/ios'"><i class="fa fa-apple"></i></span>
                   <div class="service-desc">
-                    <h4><b><a href="<?php echo base_url();?>service/ios">IOS开发</a></b></h4>
-                    <p>提供一站式的IOS手机APP定制开发服务</p>
+                    <h4><b><a href="<?php echo base_url();?>service/ios">iOS开发</a></b></h4>
+                    <p>提供一站式的iOS手机APP定制开发服务</p>
                   </div>
                 </div>
               </div> <!-- / .services -->
@@ -240,25 +240,20 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <h2>米荣商城有哪些功能 ？</h2>
                 <p class="lead text-muted">
-               门店自提&nbsp;&nbsp;&nbsp;&nbsp;线下自提站<br />
-频道专题&nbsp;&nbsp;&nbsp;&nbsp;在线客服<br />
-平台结算&nbsp;&nbsp;&nbsp;&nbsp;预存款充值卡 <br />
-微信登录、支付&nbsp;&nbsp;&nbsp;&nbsp;平台红包<br />
-商品SKU&nbsp;&nbsp;&nbsp;&nbsp;店铺装修<br />
-售卖区域&nbsp;&nbsp;&nbsp;&nbsp;晒单分享&nbsp;&nbsp;&nbsp;&nbsp;移动端应用<br />
-<br />
-
-
+                门店自提&nbsp;&nbsp;&nbsp;&nbsp;线下自提站<br />
+                频道专题&nbsp;&nbsp;&nbsp;&nbsp;在线客服<br />
+                平台结算&nbsp;&nbsp;&nbsp;&nbsp;预存款充值卡 <br />
+                微信登录、支付&nbsp;&nbsp;&nbsp;&nbsp;平台红包<br />
+                商品SKU&nbsp;&nbsp;&nbsp;&nbsp;店铺装修<br />
+                售卖区域&nbsp;&nbsp;&nbsp;&nbsp;晒单分享&nbsp;&nbsp;&nbsp;&nbsp;移动端应用<br />
+                <br />
                 </p>
-				        
 				        <a class="btn-animate btn-style btn-d btn-primary" href="<?php echo base_url()?>contact">了解更多</a>
               </div>              
             </div> <!-- / .row -->
         </div> <!-- / .container -->
       </div> <!-- / .Tag Banner -->     
 
-      
-  
       <!-- Call Action -->
 	  <div class="call-actions">
 	    <div class="container">
@@ -315,7 +310,7 @@
               <div class="blog-list blog-desc">
                 <ul>
                 <?php foreach($list['rows'] as $k => $v): ?>
-                  <li><a href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>"><?php echo $v['title']?></a></li>
+                  <li><a href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>"><?php echo cutStr($v['title'], 15);?></a></li>
                 <?php endforeach; ?>
                 </ul>
               </div>

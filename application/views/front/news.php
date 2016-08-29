@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>Rooster - Multipurpose Business Theme</title>
+    <title>开发资讯-米荣网络 创新 效率 卓越</title>
 
     <!-- Bootstrap core CSS -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -30,7 +30,12 @@
           <div class="row">            
             <ol class="breadcrumb hidden-xs">
               <li><a href="<?php echo base_url();?>">首页</a></li>
-              <li class="active"><?php echo $nav['page_title'];?></li>
+              <?php if(empty($nav['class_name'])):?>
+                <li class="active"><?php echo $nav['page_title'];?></li>
+              <?php else:?>
+                <li><a href="<?php echo base_url();?>news"><?php echo $nav['page_title'];?></a></li>
+                <li class="active"><?php echo $nav['class_name'];?></li>
+              <?php endif;?>
             </ol>                      
           </div> <!-- / .row -->
         </div> <!-- / .container -->
@@ -41,15 +46,17 @@
             <!-- Blog Post #1 -->
             <?php foreach($list['rows'] as $k => $v): ?>
             <div class="blog">
-              <img src="<?php echo _get_cfg_path('img');?>avatar.jpg" alt="...">
+              <!-- <img src="<?php //echo _get_cfg_path('img');?>avatar.jpg" alt="..."> -->
               <div class="blog-desc">
                 <h3>
-                  <a href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>"><?php echo $v['title']?></a>
+                  <a href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>"><?php echo $v['title'];?></a>
                 </h3>
                 <hr>
                 <p class="text-muted"><?php echo date('Y-m-d H:i',$v['addtime']); ?></p>
-			           <a href=""><img class="img-responsive" src="<?php echo base_url().$v['pic'];?>" alt="..."></a>
-                <p><?php echo $v['content'];?></p>
+                <?php if(!empty($v['pic'])):?>
+			           <a href=""><img class="img-responsive" src="<?php echo base_url().$v['pic'];?>" alt="<?php echo $v['title'];?>"></a>
+                <?php endif;?>
+                <p><?php echo htmlspecialchars_decode( cutStr($v['content'], 200) );?></p>
                 <a class="btn-animate btn-style btn-d btn-primary" href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>">阅读更多...</a>               
               </div>
             </div>
