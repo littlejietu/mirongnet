@@ -57,6 +57,8 @@ class Login extends CI_Controller {
 			$this->load->helper('captcha');
 			$this->load->library('encrypt');
 
+			session_start();
+
 
 			//验证验证码是否真正确
 			if(!check_captcha($captcha,'verify')){
@@ -90,7 +92,7 @@ class Login extends CI_Controller {
 
 			//$this->systemSetKey();
 			$this->load->library('encrypt');
-			$this->load->library('session');
+			//$this->load->library('session');
 			$user = array('admin_name'=>$adminInfo['name'], 'admin_id'=>$adminInfo['id'],'role_id'=>$adminInfo['role_id'],'is_super'=>$adminInfo['is_super']);
 			//$this->session('sys_key',$this->encrypt->encode(serialize($user),C('basic_info.MD5_KEY')),36000);
 			//$this->session->set_userdata('sys_key',$this->encrypt->encode(serialize($user),C('basic_info.MD5_KEY')));
@@ -106,7 +108,8 @@ class Login extends CI_Controller {
 	}
 
 	public function logout(){
-		$this->session->set_userdata('sys_key',null,-1);
+		//$this->session->set_userdata('sys_key',null,-1);
+		$_SESSION['sys_key'] = null;
 		redirect(ADMIN_SITE_URL);
 	}
 }

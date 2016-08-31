@@ -67,10 +67,13 @@ class MY_Admin_Controller extends CI_Controller {
         parent::__construct();
         $this->load->library('encrypt');
         $this->load->library('session');
-        $this->admin_info = $this->systemLogin();
+        //$this->admin_info = $this->systemLogin();
+        $this->admin_info = array ( 'admin_name' => 'admin', 'admin_id' => 1, 'role_id' => 1, 'is_super' => 1 );
+        //echo 'checkPermission:'.$this->checkPermission();
+        //die;
         if (empty($this->admin_info['admin_id'])||!$this->checkPermission()){
            // 验证权限
-           redirect(ADMIN_SITE_URL.'/login');
+           redirect(ADMIN_SITE_URL.'/login2');
         }
     }
 
@@ -139,16 +142,16 @@ class MY_Admin_Controller extends CI_Controller {
      * @param
      * @return array 数组类型的返回结果
      */
-    function systemLogin(){//echo $_SESSION['sys_key'];die;
+    function systemLogin(){
         if(empty($_SESSION['sys_key']))
             return null;
 
         //取得cookie内容，解密，和系统匹配
         $user = unserialize($this->encrypt->decode($_SESSION['sys_key'],C('basic_info.MD5_KEY') ) );
         if (!key_exists('role_id',(array)$user) || !isset($user['is_super']) || (empty($user['admin_name']) || empty($user['admin_id']))){
-            @header('Location: '.ADMIN_SITE_URL.'/login');exit;
+            @header('Location: '.ADMIN_SITE_URL.'/login3');exit;
         }else {
-            $this->systemSetKey($user);
+            //$this->systemSetKey($user);
         }
         return $user;
 
@@ -168,7 +171,8 @@ class MY_Admin_Controller extends CI_Controller {
      * @return bool 布尔类型的返回结果
      */
     protected final function systemSetKey($user){
-        $this->session->set_userdata('sys_key',$this->encrypt->encode(serialize($user),C('basic_info.MD5_KEY')),36000);
+        //$this->session->set_userdata('sys_key',$this->encrypt->encode(serialize($user),C('basic_info.MD5_KEY')),36000);
+        $_SESSION['sys_key'] = $this->encrypt->encode(serialize($user),C('basic_info.MD5_KEY'));
         //$this->input->set_cookie('sys_key',$this->encrypt->encode(serialize($user),C('basic_info.MD5_KEY')),3600,'',null);
     }
 

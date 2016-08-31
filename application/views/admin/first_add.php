@@ -143,7 +143,10 @@
           <td colspan="2" class="required"><label for="status">推首状态: </label></td>
         </tr>
         <tr class="noborder">
-          <td class="vatop rowform"><input type="radio" name="status"  id="type_status" value="1" <?php if (isset($info['status']) && $info['status'] == 1){?>checked="checked"<?php }?>>启用　<input type="radio" name="status"  id="type_status" value="0" <?php if (isset($info['status']) && $info['status'] == 0){?>checked="checked"<?php }?>>禁用</td>
+          <td class="vatop rowform">
+          <input type="radio" name="status"  id="type_status" value="1" <?php if (isset($info['status']) && $info['status'] == 1){?>checked="checked"<?php }?>>启用　
+          <input type="radio" name="status"  id="type_status" value="0" <?php if (isset($info['status']) && $info['status'] == 0){?>checked="checked"<?php }?>>禁用
+          </td>
           <td class="vatop tips"></td>
         </tr>
       </tbody> 
