@@ -45,7 +45,7 @@
                 <div class="service-item" title="助力企业快速实现移动化战略布局">
                   <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/ios'"><i class="fa fa-apple"></i></span>
                   <div class="service-desc">
-                    <h4><b><a href="<?php echo base_url();?>service/ios">iOS开发</a></b></h4>
+                    <h4><b><a href="<?php echo get_html_url('service/ios');?>">iOS开发</a></b></h4>
                     <p>提供一站式的iOS手机APP定制开发服务</p>
                   </div>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="service-item">
                   <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/android'"><i class="fa fa-android"></i></span>
                   <div class="service-desc">
-                    <h4><b><a href="<?php echo base_url();?>service/android">Android开发</a></b></h4>
+                    <h4><b><a href="<?php echo get_html_url('service/android');?>">Android开发</a></b></h4>
                     <p>用户量最多的移动OS，推广相对容易，系统开放性高</p>
                   </div>
                 </div>
@@ -67,7 +67,7 @@
                 <div class="service-item">
                   <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/wx'"><i class="fa fa-comments-o"></i></span>
                   <div class="service-desc">
-                    <h4><b><a href="<?php echo base_url();?>service/wx">微信公众号开发</a></b></h4>
+                    <h4><b><a href="<?php echo get_html_url('service/wx');?>">微信公众号开发</a></b></h4>
                     <p>微商城，微分销系统，微官网，微营销，微会员，微支付等开发</p>
                   </div>
                 </div>
@@ -80,7 +80,7 @@
                 <div class="service-item">
                   <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/h5'"><i class="fa fa-tablet"></i></span>
                   <div class="service-desc">
-                    <h4><b><a href="<?php echo base_url();?>service/h5">H5手机站开发</a></b></h4>
+                    <h4><b><a href="<?php echo get_html_url('service/h5');?>">H5手机站开发</a></b></h4>
                     <p>移动体验好，推广成本低，建站速度快，建站成本低</p>
                   </div>
                 </div>
@@ -91,7 +91,7 @@
                 <div class="service-item">
                   <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/web'"><i class="fa fa-desktop"></i></span>
                   <div class="service-desc">
-                    <h4><b><a href="<?php echo base_url();?>service/web">Web网站开发</a></b></h4>
+                    <h4><b><a href="<?php echo get_html_url('service/web');?>">Web网站开发</a></b></h4>
                     <p>电商/商城类，企业官网，社交，社区网站制作</p>
                   </div>
                 </div>
@@ -102,7 +102,7 @@
                 <div class="service-item">
                   <span class="icon icon-1 icon-1c" style="cursor:pointer" onclick="window.location.href='<?php echo base_url();?>service/shop'"><i class="fa fa-laptop"></i></span>
                   <div class="service-desc">
-                    <h4><b><a href="<?php echo base_url();?>service/shop">电商APP</a></b></h4>
+                    <h4><b><a href="<?php echo get_html_url('service/shop');?>">电商APP</a></b></h4>
                     <p>专业为您提供全模式的商城APP/电商APP解决方案</p>
                   </div>
                 </div>
