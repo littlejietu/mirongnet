@@ -17,13 +17,13 @@ $config['AESAPPCLIENT_KEY'] = 'AesAppCLIENT_Xtt';
 );*/
 
 $config['url'] = array(
-	'base_site_url'=>'http://www.xiang.com',
-	'shop_site_url'=>'http://www.xiang.com/shop',
-	'seller_site_url'=>'http://www.xiang.com/seller',
-	'admin_site_url'=>'http://www.xiang.com/admin',
+	'base_site_url'=>'http://www.mirongnet1.cn',
+	'shop_site_url'=>'http://www.mirongnet1.cn/shop',
+	'seller_site_url'=>'http://www.mirongnet1.cn/seller',
+	'admin_site_url'=>'http://www.mirongnet1.cn/admin',
 	//'mobile_site_url'=>'http://data.zooernet.com/mobile',
-	'wap_site_url'=>'http://www.xiang.com/wap',
-	'upload_site_url'=>'http://www.xiang.com/upload',
+	'wap_site_url'=>'http://www.mirongnet1.cn/wap',
+	'upload_site_url'=>'http://www.mirongnet1.cn/upload',
 );
 
 
@@ -38,13 +38,13 @@ $config['basic_info'] = array(
 
 //develop
  $config['url'] = array(
-     'base_site_url'=>'http://www.xiang.com',
-     'shop_site_url'=>'http://www.xiang.com/shop',
-     'seller_site_url'=>'http://www.xiang.com/seller',
-     'admin_site_url'=>'http://www.xiang.com/admin',
-     //'mobile_site_url'=>'http://www.xiang.com/mobile',
-     'wap_site_url'=>'http://www.xiang.com/wap',
-     'upload_site_url'=>'http://www.xiang.com/upload',
+     'base_site_url'=>'http://www.mirongnet1.cn',
+     'shop_site_url'=>'http://www.mirongnet1.cn/shop',
+     'seller_site_url'=>'http://www.mirongnet1.cn/seller',
+     'admin_site_url'=>'http://www.mirongnet1.cn/admin',
+     //'mobile_site_url'=>'http://www.mirongnet1.cn/mobile',
+     'wap_site_url'=>'http://www.mirongnet1.cn/wap',
+     'upload_site_url'=>'http://www.mirongnet1.cn/upload',
  );
 
 
@@ -196,8 +196,26 @@ $config['PayType'] = array(
 	'2'=>'货到付款',
 );
 
-$config['Goods_Tpl'] = array(
-	'Follow'=>array('title','point','comm_price','pic_path','brand_name','spu','content','m_content' ),
+$config['Page_Style'] = array(
+	'front'=>array(
+		'cur_tag_open'=>'<li class="active"><a>',
+		'cur_tag_close'=>'</a></li>',
+		'first_link'=>'&laquo;',
+		'last_link'=>'&raquo;',
+		'more_tag'=>'..',
+		'num_links'=>5,
+		'every_tag_open'=>'<li>',
+		'every_tag_close'=>'</li>',
+	),
+	'pagesize'=>5,
+);
+
+$config['Html_Page'] = array(
+	'news_list'=>'news?class_id={class_id}&page={page}',
+	'news_list_html'=>'news_{class_id}_{page}.html',
+	'news_detail'=>'news/detail?id={id}',
+	'news_detail_html'=>'news_detail_{id}.html',
+
 );
 
 
