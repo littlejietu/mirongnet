@@ -237,7 +237,6 @@
     </table>
 
   </form>
-  <!-- <iframe name="resultIframe" src="" width="600" height="300" frameborder="0"></iframe> -->
 </div>
 
 

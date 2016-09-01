@@ -19,7 +19,6 @@
 </head>
 <body>
 
-
 <div class="page">
   <div class="fixed-bar">
     <div class="item-title">
@@ -90,7 +89,5 @@
 </div>
 <?php echo _get_html_cssjs('lib','jquery-ui/themes/ui-lightness/jquery.ui.css','css');?>
 <?php echo _get_html_cssjs('lib','jquery-ui/jquery.ui.js','js');?>
-
-
 </body>
 </html>

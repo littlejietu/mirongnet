@@ -5,18 +5,12 @@ class Collect extends MY_Admin_Controller {
 	public function __construct()
 	{
 	    parent::__construct();
-	    //$this->load->library('Html');
 
-	    //$this->load->model('Html_page_model');
-	    //$this->load->model('nav_model');
-	    
 	}
 
 	public function index()
 	{
 		$this->load->model('Collect_model');
-		$ad_place = $this->input->post_get('ad_place');
-
 		
 		$cKey = $this->input->post_get('txtKey');
 		
@@ -25,11 +19,7 @@ class Collect extends MY_Admin_Controller {
 		$pagesize = 8;
 		$arrParam = array();
 		$arrWhere = array();
-		if($ad_place)
-		{
-		    $arrParam['ad_place'] = $ad_place;
-		    $arrWhere['ad_place'] = $ad_place;
-		}
+		
 		
 		if($cKey)
 		{
@@ -41,11 +31,6 @@ class Collect extends MY_Admin_Controller {
 		$arrWhere['status <>'] = -1;
 		
 		$list = $this->Collect_model->fetch_page($page, $pagesize, $arrWhere,'*',$strOrder);
-		//print_r($list);die;
-		//var_dump($page, $pagesize);die;
-		//echo $this->db->last_query();die;
-		//$this->load->model('Link_Place_Model');
-		//$ad_placeList = $this->Link_Place_Model->get_list();
 		
 		//分页
 		$pagecfg = array();
@@ -56,15 +41,12 @@ class Collect extends MY_Admin_Controller {
 		//$this->load->library('pagination');
 		$this->pagination->initialize($pagecfg);
 		$list['pages'] = $this->pagination->create_links();
-		// foreach ($ad_placeList as $key=>$value){
-		//     $ad_place[$value['id']] = $value['title'];
-		// }
+
 		$result = array(
 		    'list' => $list,
 		
 		    'arrParam' => $arrParam,
 			);
-			//var_dump($list);die;
 		$this->load->view('admin/collect',$result);
 	}
 
@@ -76,36 +58,24 @@ class Collect extends MY_Admin_Controller {
 	    $this->load->model('Article_Class_model');
 		$list = $this->Article_Class_model->getClassList();
 		
-		
-		
 	    $this->load->model('Collect_model');
-	    //$arrPlace = $this->Collect_Model->get_list();
-	
+
 	    if(!empty($id))
 	    {
 	        $info = $this->Collect_model->get_by_id($id);
-	       // print_r($info);die;
-	        // $place = $this->Collect_Model->get_by_id($info['id'],'title');
-	        // $info['title'] = $place['title'];
+
 	    }
         $result = array(
             'info' => $info,
             'list'=>$list
-            //'arrPlace'=>$arrPlace,
         );
 		$this->load->view('admin/collect_add',$result);
 	}
 
 	public function save()
 	{		
-	
-		//var_dump();die;
-			//echo time();die;//
-	    //$this->lang->load('admin_Link');
-		
 		
 		//输出所有post提交的表单内元素
-	//var_dump($_POST);//exit;
 	    if ($this->input->is_post())
 	    {
 	        //验证规则
@@ -116,18 +86,14 @@ class Collect extends MY_Admin_Controller {
 	                'rules'   => 'trim|required'//验证规划
 	            ),
 	           
-				
-	            
 	        );
-	   // echo time();
-	  // print_r();
+
 	        $this->form_validation->set_rules($config);
 	    
 	        if ($this->form_validation->run() === TRUE)
 	        {
 	            $id = (int)$this->input->post('id');
 	            $this->load->model('Collect_model');
-	            //$oPlace = $this->Link_Place_model->get_by_id($id);
 	            
 	            //将需要保存的数据赋值给数组$data
 	            $data = array(
@@ -163,15 +129,7 @@ class Collect extends MY_Admin_Controller {
 	            $id	= $this->input->post('id');
 	            if($id)
 	                $data['id'] = $id;
-//接收图片必须用这个，数据库里才会有图片名字					
-			 // if($this->input->post('img'))
-	   //          {
-	   //              $data['pic'] = $this->input->post('img');
-	   //          }
-	   //          else 
-	   //          { 
-	   //              $data['pic'] = $this->input->post('orig_img');
-	   //          }
+
 	            $id	= $this->input->post('id');
 	            if($id)
 	                $data['id'] = $id;
@@ -183,12 +141,11 @@ class Collect extends MY_Admin_Controller {
 			
 	            //echo '成功,<a href="/admin/aa">返回列表页</a>';
 				
-				//echo base_url('/admin/link');die;
 	            redirect(ADMIN_SITE_URL.'/collect');
 	            exit;
 	        }
 	        else
-	        {//echo base_url('/admin/link1');die;
+	        {
 	            redirect(ADMIN_SITE_URL.'/collect/add');
 	        }
 	        	
@@ -201,8 +158,7 @@ class Collect extends MY_Admin_Controller {
 	    if ($this->input->is_post())
 	    {	
 	        $id = $this->input->post('del_id');
-			//var_dump($id);
-			//var_dump($id);die;
+
 			foreach($id as $k=>$v){
 				
 				$page = _get_page();
