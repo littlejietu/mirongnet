@@ -33,7 +33,7 @@
               <?php if(empty($nav['class_name'])):?>
                 <li class="active"><?php echo $nav['page_title'];?></li>
               <?php else:?>
-                <li><a href="<?php echo base_url();?>news"><?php echo $nav['page_title'];?></a></li>
+                <li><a href="<?php echo base_url();?>news<?php echo get_is_html('news')?'.html':'';?>"><?php echo $nav['page_title'];?></a></li>
                 <li class="active"><?php echo $nav['class_name'];?></li>
               <?php endif;?>
             </ol>                      
@@ -49,7 +49,11 @@
               <!-- <img src="<?php //echo _get_cfg_path('img');?>avatar.jpg" alt="..."> -->
               <div class="blog-desc">
                 <h3>
-                  <a href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>"><?php echo $v['title'];?></a>
+                  <?php if($detail_is_html):?>
+                    <a href="<?php echo base_url();?>html/news_detail_<?php echo $v['id']?>.html"><?php echo $v['title'];?></a>
+                  <?php else:?>
+                    <a href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>"><?php echo $v['title'];?></a>
+                  <?php endif?>
                 </h3>
                 <hr>
                 <p class="text-muted"><?php echo date('Y-m-d H:i',$v['addtime']); ?></p>
@@ -57,19 +61,18 @@
 			           <a href=""><img class="img-responsive" src="<?php echo base_url().$v['pic'];?>" alt="<?php echo $v['title'];?>"></a>
                 <?php endif;?>
                 <p><?php echo htmlspecialchars_decode( cutStr($v['content'], 200) );?></p>
-                <a class="btn-animate btn-style btn-d btn-primary" href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>">阅读更多...</a>               
+                <?php if($detail_is_html):?>
+                  <a class="btn-animate btn-style btn-d btn-primary" href="<?php echo base_url();?>html/news_detail_<?php echo $v['id']?>.html">阅读更多...</a>  
+                <?php else:?>
+                  <a class="btn-animate btn-style btn-d btn-primary" href="<?php echo base_url();?>news/detail?id=<?php echo $v['id']?>">阅读更多...</a>
+                <?php endif;?>           
               </div>
             </div>
             <?php endforeach; ?>
             <!-- Pagination -->
+
             <ul class="pagination pull-right">
-              <li><a href="#">&laquo;</a></li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li><a href="#">&raquo;</a></li>
+              <?php echo $list['pages'];?>
             </ul>
             <div class="clearfix"></div>
           </div>
@@ -95,7 +98,7 @@
               <div class="panel-body">
               <?php foreach($list_class as $k => $v): ?>
                 <ul>
-                  <li><a href="<?php echo base_url();?>news?class_id=<?php echo $v['id']?>"><?php echo $v['name'];?></a></li>
+                  <li><a href="<?php echo base_url();?><?php echo !$list_is_html?'news?class_id='.$v['id']:'html/news_'.$v['id'].'_1.html'?>"><?php echo $v['name'];?></a></li>
                 </ul>
                 <?php endforeach; ?>
               </div>
