@@ -149,10 +149,14 @@ class MY_Admin_Controller extends CI_Controller {
         //取得cookie内容，解密，和系统匹配
         $user = unserialize($this->encrypt->decode($_SESSION['sys_key'],C('basic_info.MD5_KEY') ) );
         if (!key_exists('role_id',(array)$user) || !isset($user['is_super']) || (empty($user['admin_name']) || empty($user['admin_id']))){
-            @header('Location: '.ADMIN_SITE_URL.'/login3');exit;
+            @header('Location: '.ADMIN_SITE_URL.'/login');exit;
         }else {
             //$this->systemSetKey($user);
         }
+        //else {
+            //print_r($user);die; 
+            //$this->systemSetKey($user);
+        //}
         return $user;
 
         /*return array(
