@@ -29,7 +29,7 @@
           <div class="row">            
             <ol class="breadcrumb hidden-xs">
               <li><a href="<?php echo base_url();?>">首页</a></li>
-              <li><a href="<?php echo base_url();?>news"><?php echo $nav['page_title'];?></a></li>
+              <li><a href="<?php echo base_url();?>news<?php echo get_is_html('news')?'.html':''?>"><?php echo $nav['page_title'];?></a></li>
               <li class="active"><?php echo $info['title']?></li>
             </ol>                      
           </div> <!-- / .row -->
@@ -78,9 +78,10 @@
             </div>    
             <div class="panel">              
               <div class="panel-body">
-              <?php foreach($list as $k => $v): ?>
+              <?php $list_is_html = get_is_html(C('Html_Page.news_list'));
+               foreach($list as $k => $v): ?>
                 <ul>
-                  <li><a href="<?php echo base_url();?>news?class_id=<?php echo $v['id']?>"><?php echo $v['name'];?></a></li>
+                  <li><a href="<?php echo base_url();?><?php echo !$list_is_html?'news?class_id='.$v['id']:'html/news_'.$v['id'].'_1.html'?>"><?php echo $v['name'];?></a></li>
                   
                 </ul>
                 <?php endforeach; ?>
