@@ -24,7 +24,7 @@
     <div class="item-title">
       <h3>添加采集项</h3>
       <ul class="tab-base">
-        <li><a href="JavaScript:void(0);"><span>采集管理</span></a></li>
+        <li><a href="<?php echo ADMIN_SITE_URL.'/collect'?>"><span>采集管理</span></a></li>
         <li><a href="JavaScript:void(0);" class="current"><span>添加采集项</span></a></li>
       </ul>
     </div>
@@ -59,7 +59,7 @@
         </tr>
         <tr class="noborder">
           <td>所属分类:</td>
-          <td class="vatop onoff">
+          <td class="vatop onoff" colspan="3">
             <select name="class_id">
               <option value="all">全部</option>
               <?php foreach($list['data'] as $v):?>
@@ -78,6 +78,13 @@
             </select>
           </td>
         </tr>
+        <tr class="noborder">
+          <td class="w200">状态:</td>
+          <td class="vatop" colspan="3">
+            <input type="radio" name="status" value="1" <?php if (empty($info['status']) || $info['status'] == 1) echo 'checked="checked"';?>>开启　
+            <input type="radio" name="status" value="2" <?php if (isset($info['status']) && $info['status'] == 2) echo 'checked="checked"';?>>关闭
+          </td>
+        </tr>
       </tbody>
 
     </table>
@@ -89,12 +96,12 @@
         <tr>
           <td class="w200">网址类型:</td>
           <td class="vatop" colspan="3">
-            <input type="radio" name="attribute"  id="attribute" value="1" <?php if (isset($info['attribute']) && $info['attribute'] == 1){?>checked="checked"<?php }?>>序列网址　
-            <input type="radio" name="attribute"  id="attribute" value="2" <?php if (isset($info['attribute']) && $info['attribute'] == 2){?>checked="checked"<?php }?>>手工指定
+            <input type="radio" name="attribute" value="1" <?php if (empty($info['attribute']) || $info['attribute'] == 1) echo 'checked="checked"';?> >序列网址　
+            <input type="radio" name="attribute" value="2" <?php if (isset($info['attribute']) && $info['attribute'] == 2) echo 'checked="checked"';?> >手工指定
             
           </td>
         </tr>
-        <tr class="noborder">
+        <tr class="noborder" id="tb_attribute_1">
           <td>批量生成地址设置:</td>
           <td class="vatop" colspan="3">
             <table>
@@ -119,7 +126,7 @@
           </td>
         </tr>
 
-        <tr class="noborder">
+        <tr class="noborder" id="tb_attribute_2" style="display:none">
           <td>手工指定网址:
             <br />
             <span>在指定了通配规则后有些不能匹配的网址也可以在这里指定。</span>
@@ -143,13 +150,6 @@
           <td class="vatop" colspan="3">
             网址中必须包含&nbsp;&nbsp;<input type="text" class="w200" name="url_must_contain" value="<?php echo !empty($info)?$info['url_must_contain']:'';?>" />&nbsp;&nbsp;
             网址中不得包含&nbsp;&nbsp;<input type="text" class="w200" name="url_not_contain" value="<?php echo !empty($info)?$info['url_not_contain']:'';?>" />
-          </td>
-        </tr>
-        <tr class="noborder">
-          <td class="w200">状态:</td>
-          <td class="vatop" colspan="3">
-            <input type="radio" name="status"  id="status" value="1" <?php if (isset($info['status']) && $info['status'] == 1){?>checked="checked"<?php }?>>开启　
-            <input type="radio" name="status"  id="status" value="2" <?php if (isset($info['status']) && $info['status'] == 2){?>checked="checked"<?php }?>>关闭
           </td>
         </tr>
       </tbody>
@@ -263,6 +263,16 @@ $(function(){
       $('#table_'+i).hide();
     $('#'+tb).show();
   });
+
+  $("input[name=attribute]").click(function(){
+    $('#tb_attribute_1').hide();
+    $('#tb_attribute_2').hide();
+
+    $('#tb_attribute_'+$(this).val()).show();
+  });
+
+
+
 });
 //
 $(document).ready(function(){
