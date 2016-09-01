@@ -71,8 +71,10 @@ class Collect extends MY_Admin_Controller {
 	public function add()
 	{
 		$id	= $this->input->get('id');
-	    $result = array();
 	    $info = array();
+
+	    $this->load->model('Article_Class_model');
+		$list = $this->Article_Class_model->getClassList();
 		
 		
 		
@@ -88,6 +90,7 @@ class Collect extends MY_Admin_Controller {
 	    }
         $result = array(
             'info' => $info,
+            'list'=>$list
             //'arrPlace'=>$arrPlace,
         );
 		$this->load->view('admin/collect_add',$result);
