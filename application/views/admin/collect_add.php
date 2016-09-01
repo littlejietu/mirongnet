@@ -22,25 +22,33 @@
 <div class="page">
   <div class="fixed-bar">
     <div class="item-title">
-      <h3>采集栏目</h3>
+      <h3>添加采集项</h3>
       <ul class="tab-base">
-        <li><a href="JavaScript:void(0);" class="current"><span>更新栏目</span></a></li>
-        <li><a href="<?php echo ADMIN_SITE_URL.'/html_page/news';?>"><span>更新文章</span></a></li>
+        <li><a href="JavaScript:void(0);"><span>采集管理</span></a></li>
+        <li><a href="JavaScript:void(0);" class="current"><span>添加采集项</span></a></li>
       </ul>
     </div>
   </div>
   <div class="fixed-empty"></div>
+  <div class="item-title">
+      <ul class="tab-base" id="tab_menu">
+        <li><a href="JavaScript:void(0);" class="current" ntype="table_0"><span>基本信息</span></a></li>
+        <li><a href="JavaScript:void(0);" ntype="table_1"><span>网址规则</span></a></li>
+        <li><a href="javascript:void(0);" ntype="table_2"><span>内容规则</span></a></li>
+        <li><a href="javascript:void(0);" ntype="table_3"><span>导入规则</span></a></li>
+      </ul>
+    </div>
   <form method="post" id="settingForm" action="<?php echo ADMIN_SITE_URL.'/collect/save'?>" >
     <input type="hidden" name="id" value="<?php echo !empty($info)?$info['id']:0; ?>" />
-    <table class="table tb-type2">
+    <table class="table tb-type2" id="table_0">
       <tbody>
         <tr class="noborder">
-          <td colspan="4"><b>&raquo;节点基本信息</b></td>
+          <td colspan="4"><b>&raquo;基本信息</b></td>
         </tr>
         <tr>
-          <td class="w200">采集项目名:</td>
+          <td class="w200" class="required"><label class="validation" for="txt_name">采集项目名:</label></td>
           <td class="vatop">
-            <input type="text" class="w200" name="name" value="<?php echo !empty($info)?$info['name']:''; ?>"/>
+            <input type="text" class="w200" name="name" id="txt_name" value="<?php echo !empty($info)?$info['name']:''; ?>"/>
           </td>
           <td>目标页面编码:</td>
           <td class="vatop  ">
@@ -52,16 +60,31 @@
         <tr class="noborder">
           <td>所属分类:</td>
           <td class="vatop onoff">
-            <input type="text" class="w200" name="path" />
+            <select name="class_id">
+              <option value="all">全部</option>
+              <?php foreach($list['data'] as $v):?>
+                <?php if( in_array($v['id'],$list['children'][0]) ):?>
+                  <option value="<?php echo $v['id']?>"><?php echo $v['name']?></option>
+                  <?php 
+                        if(!empty($list['children'][$v['id']])):
+                          foreach ($list['data'] as $vv):
+                            if(in_array( $vv['id'] ,$list['children'][$v['id']] )):?>
+                            <option value="<?php echo $vv['id']?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $vv['name']?></option>
+                        <?php endif;
+                          endforeach;
+                        endif;?>
+                <?php endif;?>
+              <?php endforeach;?>
+            </select>
           </td>
         </tr>
       </tbody>
 
     </table>
-    <table class="table tb-type2">
+    <table class="table tb-type2" id="table_1" style="display:none">
       <tbody>
-        <tr>
-          <td colspan="4"><b>&raquo;列表网址获取规则</b></td>
+        <tr class="noborder">
+          <td colspan="4"><b>&raquo;网址获取规则</b></td>
         </tr>
         <tr>
           <td class="w200">网址类型:</td>
@@ -105,10 +128,6 @@
             <textarea name="manual_url" id="manual_url" cols="45" rows="5" style="width:80%;height:160px"><?php echo !empty($info)?$info['manual_url']:'';?></textarea>
           </td>
         </tr>
-      </tbody>
-    </table>
-    <table class="table tb-type2">
-      <tbody>
         <tr>
           <td colspan="4"><b>&raquo;文章网址匹配规则</b></td>
         </tr>
@@ -134,10 +153,10 @@
           </td>
         </tr>
       </tbody>
-      <table class="table tb-type2">
+      <table class="table tb-type2" id="table_2" style="display:none">
       <tbody>
         <tr class="noborder">
-          <td colspan="4"><b>&raquo;节点基本信息11111</b></td>
+          <td colspan="4"><b>&raquo;内容匹配规则</b></td>
         </tr>
         <tr>
           <td class="w200">标题规则:</td>
@@ -181,10 +200,10 @@
         </tr>
       </tbody>
     </table>
-    <table class="table tb-type2">
+    <table class="table tb-type2" id="table_3" style="display:none">
       <tbody>
         <tr class="noborder">
-          <td colspan="4"><b>&raquo;导入时规则</b></td>
+          <td colspan="4"><b>&raquo;导入规则</b></td>
         </tr>
         <tr>
           <td class="w200">下载图片:</td>
@@ -209,6 +228,7 @@
         </tr>
       </tbody>
     </table>
+    <table>
       <tfoot>
         <tr>
           <td colspan="3" ><a href="JavaScript:void(0);" class="btn" id="submitBtn"><span>提交</span></a></td>
@@ -226,10 +246,23 @@
 
 <script>
 
-$(function(){$("#submitBtn").click(function(){
+$(function(){
+
+  $("#submitBtn").click(function(){
     if($("#settingForm").valid()){
      $("#settingForm").submit();
-  }
+    }
+  });
+
+  $("#tab_menu li").click(function(){
+    $(this).siblings().children('a').removeClass('current');
+
+    $(this).children('a').addClass('current');
+
+    var tb = $(this).children('a').attr('ntype');
+    for(var i=0;i<=3;i++)
+      $('#table_'+i).hide();
+    $('#'+tb).show();
   });
 });
 //
@@ -239,8 +272,20 @@ $(document).ready(function(){
       error.appendTo(element.parent().parent().prev().find('td:first'));
         },
         rules : {
+          name : {
+              required : true
+            },
+          charset : {
+              required : true
+          }
         },
         messages : {
+          name : {
+                required : '请填写采集项目名'
+            },
+          charset : {
+              required : '请选择编码'
+          }
         }
   });
 });
