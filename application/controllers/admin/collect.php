@@ -94,6 +94,9 @@ class Collect extends MY_Admin_Controller {
 	        {
 	            $id = (int)$this->input->post('id');
 	            $this->load->model('Collect_model');
+
+	            $status = $this->input->post('status');
+	            $status = empty($status)?1:$status;
 	            
 	            //将需要保存的数据赋值给数组$data
 	            $data = array(
@@ -110,7 +113,7 @@ class Collect extends MY_Admin_Controller {
 	                'url_rule'=>$this->input->post('url_rule'),
 	                'url_must_contain'=>$this->input->post('url_must_contain'),
 	                'url_not_contain'=>$this->input->post('url_not_contain'),
-	                'status'=>$this->input->post('status'),
+	                'status'=>$status,
 	                'add_time'=>time(),
 	                'collect_time'=>time(),
 	                'title_rule'=>$this->input->post('title_rule'),

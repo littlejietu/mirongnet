@@ -52,9 +52,9 @@
           </td>
           <td>目标页面编码:</td>
           <td class="vatop  ">
-            <input type="radio" name="charset"  id="charset" value="1" <?php if (isset($info['charset']) && $info['charset'] == 1){?>checked="checked"<?php }?>>GB2312　
-            <input type="radio" name="charset"  id="charset" value="2" <?php if (isset($info['charset']) && $info['charset'] == 2){?>checked="checked"<?php }?>>UTF8
-            <input type="radio" name="charset"  id="charset" value="3" <?php if (isset($info['charset']) && $info['charset'] == 3){?>checked="checked"<?php }?>>BIG5
+            <input type="radio" name="charset" value="1" <?php if (isset($info['charset']) && $info['charset'] == 1) echo 'checked="checked"';?>>GB2312　
+            <input type="radio" name="charset" value="2" <?php if (isset($info['charset']) && $info['charset'] == 2) echo 'checked="checked"';?>>UTF8
+            <input type="radio" name="charset" value="3" <?php if (isset($info['charset']) && $info['charset'] == 3) echo 'checked="checked"';?>>BIG5
           </td>
         </tr>
         <tr class="noborder">
@@ -132,7 +132,7 @@
             <span>在指定了通配规则后有些不能匹配的网址也可以在这里指定。</span>
           </td>
           <td class="vatop">
-            <textarea name="manual_url" id="manual_url" cols="45" rows="5" style="width:80%;height:160px"><?php echo !empty($info)?$info['manual_url']:'';?></textarea>
+            <textarea name="manual_url" cols="45" rows="5" style="width:80%;height:160px"><?php echo !empty($info)?$info['manual_url']:'';?></textarea>
           </td>
         </tr>
         <tr>
@@ -142,7 +142,7 @@
         <tr class="noborder">
           <td class="w200">获取网址规则:</td>
           <td class="vatop" colspan="3">
-            <textarea name="url_rule" id="url_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['url_rule']:'';?></textarea>
+            <textarea name="url_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['url_rule']:'';?></textarea>
           </td>
         </tr>
         <tr class="noborder">
@@ -161,41 +161,41 @@
         <tr>
           <td class="w200">标题规则:</td>
           <td class="vatop">
-            <textarea name="title_rule" id="title_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['title_rule']:'';?></textarea>
+            <textarea name="title_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['title_rule']:'';?></textarea>
           </td>
           <td>过滤选项:</td>
           <td class="vatop  ">
-            <textarea name="title_filter" id="title_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['title_filter']:'';?></textarea>
+            <textarea name="title_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['title_filter']:'';?></textarea>
           </td>
         </tr>
         <tr class="noborder">
           <td>内容规则:</td>
           <td class="vatop">
-            <textarea name="content_rule" id="content_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['content_rule']:'';?></textarea>
+            <textarea name="content_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['content_rule']:'';?></textarea>
           </td>
           <td>过滤选项:</td>
           <td class="vatop">
-            <textarea name="content_filter" id="content_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['content_filter']:'';?></textarea>
+            <textarea name="content_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['content_filter']:'';?></textarea>
           </td>
         </tr>
         <tr class="noborder">
           <td>时间规则:</td>
           <td class="vatop">
-            <textarea name="time_rule" id="time_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['time_rule']:'';?></textarea>
+            <textarea name="time_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['time_rule']:'';?></textarea>
           </td>
           <td>过滤选项:</td>
           <td class="vatop">
-            <textarea name="time_filter" id="time_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['time_filter']:'';?></textarea>
+            <textarea name="time_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['time_filter']:'';?></textarea>
           </td>
         </tr>
         <tr class="noborder">
           <td>来源规则:</td>
           <td class="vatop">
-            <textarea name="from_ruie" id="from_ruie" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['from_ruie']:'';?></textarea>
+            <textarea name="from_ruie" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['from_ruie']:'';?></textarea>
           </td>
           <td>过滤选项:</td>
           <td class="vatop">
-            <textarea name="from_filter" id="from_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['from_filter']:'';?></textarea>
+            <textarea name="from_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['from_filter']:'';?></textarea>
           </td>
         </tr>
       </tbody>
@@ -208,22 +208,22 @@
         <tr>
           <td class="w200">下载图片:</td>
           <td class="vatop">
-            <input type="radio" name="is_download_img"  id="is_download_img" value="1" <?php if (isset($info['is_download_img']) && $info['is_download_img'] == 1){?>checked="checked"<?php }?>>是　
-            <input type="radio" name="is_download_img"  id="is_download_img" value="2" <?php if (isset($info['is_download_img']) && $info['is_download_img'] == 2){?>checked="checked"<?php }?>>否
+            <input type="radio" name="is_download_img" value="1" <?php if (isset($info['is_download_img']) && $info['is_download_img'] == 1){?>checked="checked"<?php }?>>是　
+            <input type="radio" name="is_download_img" value="2" <?php if (isset($info['is_download_img']) && $info['is_download_img'] == 2){?>checked="checked"<?php }?>>否
           </td>
         </tr>
         <tr class="noborder">
           <td>图片水印:</td>
           <td class="vatop">
-            <input type="radio" name="is_watermark"  id="is_watermark" value="1" <?php if (isset($info['is_watermark']) && $info['is_watermark'] == 1){?>checked="checked"<?php }?>>是　
-            <input type="radio" name="is_watermark"  id="is_watermark" value="2" <?php if (isset($info['is_watermark']) && $info['is_watermark'] == 2){?>checked="checked"<?php }?>>否
+            <input type="radio" name="is_watermark" value="1" <?php if (isset($info['is_watermark']) && $info['is_watermark'] == 1){?>checked="checked"<?php }?>>是　
+            <input type="radio" name="is_watermark" value="2" <?php if (isset($info['is_watermark']) && $info['is_watermark'] == 2){?>checked="checked"<?php }?>>否
           </td>
         </tr>
         <tr class="noborder">
           <td>时间规则:</td>
           <td class="vatop">
-            <input type="radio" name="is_import_order"  id="is_import_order" value="1" <?php if (isset($info['is_import_order']) && $info['is_import_order'] == 1){?>checked="checked"<?php }?>>与目标站相同　
-            <input type="radio" name="is_import_order"  id="is_import_order" value="2" <?php if (isset($info['is_import_order']) && $info['is_import_order'] == 2){?>checked="checked"<?php }?>>与目标站相反
+            <input type="radio" name="is_import_order" value="1" <?php if (isset($info['is_import_order']) && $info['is_import_order'] == 1){?>checked="checked"<?php }?>>与目标站相同　
+            <input type="radio" name="is_import_order" value="2" <?php if (isset($info['is_import_order']) && $info['is_import_order'] == 2){?>checked="checked"<?php }?>>与目标站相反
           </td>
         </tr>
       </tbody>
