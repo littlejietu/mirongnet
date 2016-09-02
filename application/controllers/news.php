@@ -99,10 +99,11 @@ class News extends MY_Controller
 
         }
 
+
+
     	$nav = array('page'=>'news',
     		'page_title'=>'APP开发资讯',
             'class_name'=>$class_name,
-
     		);
         
         $data = array(
@@ -148,6 +149,8 @@ class News extends MY_Controller
             }
         }
 
+        $arrPrevNext = $this->Article_model->getPrevNext($info['addtime'], $info['class_id']);
+
         $nav = array('page'=>'news',
             'page_title'=>'APP开发资讯',
             );
@@ -156,7 +159,7 @@ class News extends MY_Controller
             'list' => $list,
             'nav' => $nav,
             'info' => $info,
-
+            'arrPrevNext'=>$arrPrevNext,
         );
         $this->load->view('front/news_detail',$result);
     }
