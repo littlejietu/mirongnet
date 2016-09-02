@@ -295,7 +295,7 @@ class Home extends MY_Admin_Controller {
                         //array('args'=>'index,service,operation',						'text'=>'客服'),
                         array('args'=>',feedback,operation',							'text'=>'意见反馈'),
                         array('args'=>',html_page,operation',							'text'=>'HTML更新'),
-                        array('args'=>',collect,operation',								'text'=>'采集'),
+                        array('args'=>',collect,operation',								'text'=>'采集管理'),
 
 						//array('args'=>'index,mall_consult,operation',             	'text'=>'平台客服'),
 	                    //array('args'=>'index,rechargecard,operation',             	'text'=>'平台充值卡'),
