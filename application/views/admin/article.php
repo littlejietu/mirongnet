@@ -64,7 +64,7 @@
         <tr class="hover">
           <td><input type="checkbox" name='del_id[]' value="<?php echo $v['id']; ?>" class="checkitem"></td>
           <td><?php echo $v['sort']; ?></td>
-          <td><?php echo $v['title']; ?></td>
+          <td><a href="<?php echo base_url().'news/detail?id='.$v['id']?>" target="_blank"><?php echo $v['title']; ?></td>
           <!-- 生成文章所属分类 -->
           <td>
           <?php if (isset($class_list[$v['class_id']]['name'])){echo $class_list[$v['class_id']]['name'];} ?>
