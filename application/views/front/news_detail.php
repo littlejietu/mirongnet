@@ -20,6 +20,10 @@
     <![endif]-->
   </head>
   <body>
+  <?php 
+  $list_is_html = get_is_html(C('Html_Page.news_list'));
+  $detail_is_html = get_is_html(C('Html_Page.news_detail'));
+  ?>
   <?php include("inc/nav.php");?>
     <!-- Wrapper -->
     <div class="wrapper">
@@ -47,14 +51,29 @@
                 </h3>
                 <hr>
                 <p class="text-muted"><?php echo date('Y-m-d H:i',$info['addtime']); ?></p>                
-                <img class="img-responsive" src="/<?php echo $info['pic'];?>" alt="...">
+                
                 <p><?php echo htmlspecialchars_decode($info['content']);?></p>
               </div>
             </div>
             <!-- Pagination -->
             <ul class="pager pull-right">
-              <li><a href="#">上一个</a></li>
-              <li><a href="#">下一个</a></li>
+
+              <?php if(!empty($arrPrevNext['prev'])):?>
+                <li>
+                  <?php if($detail_is_html):?>
+                    <a href="<?php echo base_url();?>html/news_detail_<?php echo $arrPrevNext['prev']['id'];?>.html">上一篇</a>
+                  <?php else:?>
+                    <a href="<?php echo base_url();?>news/detail?id=<?php echo $arrPrevNext['prev']['id'];?>">上一篇</a>
+                  <?php endif?>
+              <?php endif;?>
+              <?php if(!empty($arrPrevNext['next'])):?>
+                <li>
+                  <?php if($detail_is_html):?>
+                    <a href="<?php echo base_url();?>html/news_detail_<?php echo $arrPrevNext['next']['id'];?>.html">下一篇</a>
+                  <?php else:?>
+                    <a href="<?php echo base_url();?>news/detail?id=<?php echo $arrPrevNext['next']['id'];?>">下一篇</a>
+                  <?php endif?></li>
+              <?php endif;?>
             </ul>
             <div class="clearfix"></div>
           </div>
@@ -78,7 +97,7 @@
             </div>    
             <div class="panel">              
               <div class="panel-body">
-              <?php $list_is_html = get_is_html(C('Html_Page.news_list'));
+              <?php 
                foreach($list as $k => $v): ?>
                 <ul>
                   <li><a href="<?php echo base_url();?><?php echo !$list_is_html?'news?class_id='.$v['id']:'html/news_'.$v['id'].'_1.html'?>"><?php echo $v['name'];?></a></li>

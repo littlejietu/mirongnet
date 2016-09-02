@@ -27,6 +27,7 @@
         
         <li><a href="JavaScript:void(0);" class="current"><span>采集列表<?php echo lang('adv_manage');?></span></a></li>
         <li><a href="<?php echo ADMIN_SITE_URL.'/collect/add';?>"><span >添加采集项</span></a></li>
+        <li><a href="<?php echo ADMIN_SITE_URL.'/collect/getlist';?>"><span >临时内容</span></a></li>
       </ul>
     </div>
   </div>
@@ -51,7 +52,7 @@
           <th>名称</th>
           <th class="align-center">最后采集时间</th>
           <th class="align-center">状态</th>
-          <th class="align-center" width="10%">操作</th>
+          <th class="align-center">操作</th>
         </tr>
       </thead>
       <tbody>
@@ -63,9 +64,12 @@
           <td><?php echo $v['name']; ?></td>
           <td class="align-center nowrap"><?php echo date('Y-m-d H:i:s',$v['collect_time']); ?></td>
           <td class="align-center nowrap"><?php if($v['status'] ==1 ) echo '开启'; elseif ($v['status'] ==2) echo '关闭';?></td>
-          <td class="w72 align-center">
-          <a href="<?php echo ADMIN_SITE_URL.'/collect/add?id='.$v['id'];?>">编辑</a>&nbsp;|&nbsp;
-          <a href="<?php echo ADMIN_SITE_URL.'/collect/del?id='.$v['id'];?>">删除</a></td>
+          <td class="align-center">
+            <a href="<?php echo ADMIN_SITE_URL.'/collect/geturl?id='.$v['id'];?>">采集网址</a>&nbsp;<a href="<?php echo ADMIN_SITE_URL.'/collect/gettxt?id='.$v['id'];?>">采集内容</a>&nbsp;<a href="<?php echo ADMIN_SITE_URL.'/collect/getlist?collect_id='.$v['id'];?>">临时内容</a>&nbsp;|&nbsp;
+
+            <a href="<?php echo ADMIN_SITE_URL.'/collect/add?id='.$v['id'];?>">编辑</a>&nbsp;
+            <a href="<?php echo ADMIN_SITE_URL.'/collect/del?id='.$v['id'];?>">删除</a>
+          </td>
         </tr>
         <?php } ?>
         <?php }else { ?>

@@ -26,6 +26,7 @@
       <ul class="tab-base">
         <li><a href="<?php echo ADMIN_SITE_URL.'/collect'?>"><span>采集管理</span></a></li>
         <li><a href="JavaScript:void(0);" class="current"><span>添加采集项</span></a></li>
+        <li><a href="<?php echo ADMIN_SITE_URL.'/collect/getlist';?>"><span >临时内容</span></a></li>
       </ul>
     </div>
   </div>
@@ -60,16 +61,16 @@
         <tr class="noborder">
           <td>所属分类:</td>
           <td class="vatop onoff" colspan="3">
-            <select name="class_id">
+            <select name="class_ids">
               <option value="all">全部</option>
               <?php foreach($list['data'] as $v):?>
                 <?php if( in_array($v['id'],$list['children'][0]) ):?>
-                  <option value="<?php echo $v['id']?>"><?php echo $v['name']?></option>
+                  <option value="<?php echo $v['id']?>"<?php if(!empty($info['class_id']) && $info['class_id']==$v['id']) echo ' selected';?>><?php echo $v['name']?></option>
                   <?php 
                         if(!empty($list['children'][$v['id']])):
                           foreach ($list['data'] as $vv):
                             if(in_array( $vv['id'] ,$list['children'][$v['id']] )):?>
-                            <option value="<?php echo $vv['id']?>">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $vv['name']?></option>
+                            <option value="<?php echo $v['id']?>,<?php echo $vv['id']?>"<?php if(!empty($info['class_id_1']) && $info['class_id_1']==$vv['id']) echo ' selected';?>>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $vv['name']?></option>
                         <?php endif;
                           endforeach;
                         endif;?>
@@ -107,12 +108,12 @@
             <table>
             <tr class="noborder">
               <td>
-                匹配网址：<input type="text" class="w200" name="batch_match_url" value="<?php echo !empty($info)?$info['batch_match_url']:''; ?>"/>&nbsp;&nbsp;<input type="button" value="测试" />
+                匹配网址：<input type="text" class="w300" name="batch_match_url" value="<?php echo !empty($info)?$info['batch_match_url']:''; ?>"/>
               </td>
             </tr>
             <tr class="noborder">
               <td>
-                (如：http://www.dedecms.com/html/test/list_(*).html，如果不能匹配所有网址，可以在手工指定网址的地方输入要追加的网址)
+                (如：<?php echo base_url();?>html/test/list_(*).html，如果不能匹配所有网址，可以在手工指定网址的地方输入要追加的网址)
               </td>
             </tr>
             <tr class="noborder">
@@ -152,6 +153,12 @@
             网址中不得包含&nbsp;&nbsp;<input type="text" class="w200" name="url_not_contain" value="<?php echo !empty($info)?$info['url_not_contain']:'';?>" />
           </td>
         </tr>
+        <!-- <tr class="noborder">
+          <td class="w200">主图规则:</td>
+          <td class="vatop" colspan="3">
+            <input type="text" class="w200" name="mimg_rule" value="<?php //echo !empty($info)?$info['mimg_rule']:'';?>" />
+          </td>
+        </tr> -->
       </tbody>
       <table class="table tb-type2" id="table_2" style="display:none">
       <tbody>
@@ -159,7 +166,13 @@
           <td colspan="4"><b>&raquo;内容匹配规则</b></td>
         </tr>
         <tr>
-          <td class="w200">标题规则:</td>
+          <td class="w200">详情页测试网址:</td>
+          <td colspan="4">
+            <input type="text" name="detail_test_url" value="<?php echo !empty($info)?$info['detail_test_url']:'';?>" class="w300">
+          </td>
+        </tr>
+        <tr>
+          <td>标题规则:</td>
           <td class="vatop">
             <textarea name="title_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['title_rule']:'';?></textarea>
           </td>
@@ -178,26 +191,26 @@
             <textarea name="content_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['content_filter']:'';?></textarea>
           </td>
         </tr>
-        <tr class="noborder">
+        <!-- <tr class="noborder">
           <td>时间规则:</td>
           <td class="vatop">
-            <textarea name="time_rule" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['time_rule']:'';?></textarea>
+            <textarea name="time_rule" cols="45" rows="5" style="width:50%;height:70px"><?php //echo !empty($info)?$info['time_rule']:'';?></textarea>
           </td>
           <td>过滤选项:</td>
           <td class="vatop">
-            <textarea name="time_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['time_filter']:'';?></textarea>
+            <textarea name="time_filter" cols="45" rows="5" style="width:50%;height:70px"><?php //echo !empty($info)?$info['time_filter']:'';?></textarea>
           </td>
         </tr>
         <tr class="noborder">
           <td>来源规则:</td>
           <td class="vatop">
-            <textarea name="from_ruie" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['from_ruie']:'';?></textarea>
+            <textarea name="from_ruie" cols="45" rows="5" style="width:50%;height:70px"><?php //echo !empty($info)?$info['from_ruie']:'';?></textarea>
           </td>
           <td>过滤选项:</td>
           <td class="vatop">
-            <textarea name="from_filter" cols="45" rows="5" style="width:50%;height:70px"><?php echo !empty($info)?$info['from_filter']:'';?></textarea>
+            <textarea name="from_filter" cols="45" rows="5" style="width:50%;height:70px"><?php //echo !empty($info)?$info['from_filter']:'';?></textarea>
           </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
     <table class="table tb-type2" id="table_3" style="display:none">
@@ -208,30 +221,34 @@
         <tr>
           <td class="w200">下载图片:</td>
           <td class="vatop">
-            <input type="radio" name="is_download_img" value="1" <?php if (isset($info['is_download_img']) && $info['is_download_img'] == 1){?>checked="checked"<?php }?>>是　
-            <input type="radio" name="is_download_img" value="2" <?php if (isset($info['is_download_img']) && $info['is_download_img'] == 2){?>checked="checked"<?php }?>>否
+            <input type="radio" name="is_download_img" value="1" <?php if (isset($info['is_download_img']) && $info['is_download_img'] == 1) echo 'checked="checked"';?>>是　
+            <input type="radio" name="is_download_img" value="2" <?php if (isset($info['is_download_img']) && $info['is_download_img'] == 2) echo 'checked="checked"';?>>否
           </td>
         </tr>
         <tr class="noborder">
           <td>图片水印:</td>
           <td class="vatop">
-            <input type="radio" name="is_watermark" value="1" <?php if (isset($info['is_watermark']) && $info['is_watermark'] == 1){?>checked="checked"<?php }?>>是　
-            <input type="radio" name="is_watermark" value="2" <?php if (isset($info['is_watermark']) && $info['is_watermark'] == 2){?>checked="checked"<?php }?>>否
+            <input type="radio" name="is_watermark" value="1" <?php if (isset($info['is_watermark']) && $info['is_watermark'] == 1) echo 'checked="checked"';?>>是　
+            <input type="radio" name="is_watermark" value="2" <?php if (isset($info['is_watermark']) && $info['is_watermark'] == 2) echo 'checked="checked"';?>>否
           </td>
         </tr>
-        <tr class="noborder">
+        <!-- <tr class="noborder">
           <td>时间规则:</td>
           <td class="vatop">
-            <input type="radio" name="is_import_order" value="1" <?php if (isset($info['is_import_order']) && $info['is_import_order'] == 1){?>checked="checked"<?php }?>>与目标站相同　
-            <input type="radio" name="is_import_order" value="2" <?php if (isset($info['is_import_order']) && $info['is_import_order'] == 2){?>checked="checked"<?php }?>>与目标站相反
+            <input type="radio" name="is_import_order" value="1" <?php //if (isset($info['is_import_order']) && $info['is_import_order'] == 1) echo 'checked="checked"';?>>与目标站相同　
+            <input type="radio" name="is_import_order" value="2" <?php //if (isset($info['is_import_order']) && $info['is_import_order'] == 2) echo 'checked="checked"';?>>与目标站相反
           </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
     <table>
       <tfoot>
         <tr>
-          <td colspan="3" ><a href="JavaScript:void(0);" class="btn" id="submitBtn"><span>提交</span></a></td>
+          <td colspan="3" >
+              <a href="JavaScript:void(0);" class="btn" id="submitBtn"><span>提交</span></a>
+              <a href="JavaScript:void(0);" class="btn" id="btnTestUrl" style="display:none"><span>测试采集网址</span></a>
+              <a href="JavaScript:void(0);" class="btn" id="btnTestTxt" style="display:none"><span>测试采集内容</span></a>
+          </td>
         </tr>
       </tfoot>
     </table>
@@ -249,9 +266,24 @@ $(function(){
 
   $("#submitBtn").click(function(){
     if($("#settingForm").valid()){
-     $("#settingForm").submit();
+      $("#settingForm").attr('action',"<?php echo ADMIN_SITE_URL.'/collect/save'?>");
+      $("#settingForm").attr('target','');
+      $("#settingForm").submit();
     }
   });
+
+  $("#btnTestUrl").click(function(){
+    $("#settingForm").attr('action',"<?php echo ADMIN_SITE_URL.'/collect/geturl_test'?>");
+    $("#settingForm").attr('target','_blank');
+    $("#settingForm").submit();
+  });
+
+  $("#btnTestTxt").click(function(){
+    $("#settingForm").attr('action',"<?php echo ADMIN_SITE_URL.'/collect/gettxt_test'?>");
+    $("#settingForm").attr('target','_blank');
+    $("#settingForm").submit();
+  });
+  
 
   $("#tab_menu li").click(function(){
     $(this).siblings().children('a').removeClass('current');
@@ -262,6 +294,14 @@ $(function(){
     for(var i=0;i<=3;i++)
       $('#table_'+i).hide();
     $('#'+tb).show();
+    if(tb=='table_1')
+      $('#btnTestUrl').show();
+    else
+      $('#btnTestUrl').hide();
+    if(tb=='table_2')
+      $('#btnTestTxt').show();
+    else
+      $('#btnTestTxt').hide();
   });
 
   $("input[name=attribute]").click(function(){

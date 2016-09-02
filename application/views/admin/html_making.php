@@ -13,6 +13,7 @@
   }
 </script>
 <body leftmargin='0' topmargin='0' bgcolor='#FFFFFF'>
+<br />
 <center>
 <div style='width:450px;padding:0px;border:1px solid #DADADA;'><div style='padding:6px;font-size:12px;border-bottom:1px solid #DADADA;background-color:#daf3fd'><b>提示信息！</b></div>
   <br />
@@ -22,9 +23,14 @@
     </div>
     <br/>
     <?php if($num == $total):?>
-      完成所有创建任务！生成文件：<?php echo $num?>个
+            完成所有任务！计数：<?php echo $num?>个, 
+            <?php if(!empty($go_url)):?>
+              <a href="<?php echo $go_url;?>">返回管理页面</a>
+            <?php endif;?>
     <?php else:?>
-      本次用时：<?php echo round($second/60,2); ?>分，到达位置：<?php echo $num;?><br/>完成创建文件总数的：<?php echo round($num/$total*100,2);?> %，继续执行任务...
+      本次用时：<?php echo round($second/60,2); ?>分，
+      到达位置：<?php echo $num;?> 完成进度：<?php echo round($num/$total*100,2);?> %，<br />
+      <?php if(!empty($txtMsg)) echo $txtMsg;?> 继续执行任务...
       <br /><a href="<?php echo $next_make_url;?>">如果你的浏览器没反应，请点击这里...</a><br/>
     <?php endif?>
   </div>
