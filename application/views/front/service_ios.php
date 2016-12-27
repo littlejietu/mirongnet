@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>服务 - 杭州米荣网络科技有限公司</title>
+    <title>服务 - 杭州米荣科技有限公司</title>
 
     <?php echo _get_html_cssjs('css','style.css,font-awesome.min.css,animate.css','css');?>
     <?php echo _get_html_cssjs('font','PT+Sans+Narrow/pt.css','css');?>

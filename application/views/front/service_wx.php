@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>服务 - 杭州米荣网络科技有限公司</title>
+    <title>服务 - 杭州米荣科技有限公司</title>
 
     <?php echo _get_html_cssjs('css','style.css,font-awesome.min.css,animate.css','css');?>
     <?php echo _get_html_cssjs('font','PT+Sans+Narrow/pt.css','css');?>
@@ -229,7 +229,7 @@
                 </h3>
                 <div class="activity-img">  
                     
-                    米荣网络为顾客提供多微营销功能开发服务，包括摇一摇、抽奖、红包、大转盘，投票活动、刮刮乐、砸金蛋等多种营销工具，您可针对企业品牌文化、产品特征，设计微信互动活动，引发用户对商家微信的兴趣及关注度，以达到营销目的。
+                    米荣科技为顾客提供多微营销功能开发服务，包括摇一摇、抽奖、红包、大转盘，投票活动、刮刮乐、砸金蛋等多种营销工具，您可针对企业品牌文化、产品特征，设计微信互动活动，引发用户对商家微信的兴趣及关注度，以达到营销目的。
                 
                     </div>
             </div>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>联系我们 - 米荣网络 创新 效率 卓越</title>
+    <title>联系我们 - 米荣科技 创新 效率 卓越</title>
 
     <!-- Bootstrap core CSS -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -78,10 +78,10 @@
             <h3 class="second-child"><span>联系我们</span></h3>
             <p>
               QQ: &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3517172160&amp;site=qq&amp;menu=yes" target="_blank"><img border="0" title="点击这里给我发消息" alt="点击这里给我发消息" src="<?php echo _get_cfg_path('img');?>qq_online.gif" style=" vertical-align: middle;"></a><br />
-              电话: 159 6885 0531<br />
+              电话: 137 3802 6961<br />
             </p>  
             <p>
-              杭州经济开发区<br />
+              杭州市江干区中豪四季公馆6-403<br />
             </p>           
             
             <!-- <div class="maps">

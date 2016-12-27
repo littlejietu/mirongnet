@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>开发服务 - 米荣网络 创新 效率 卓越</title>
+    <title>开发服务 - 米荣科技 创新 效率 卓越</title>
 
     <?php echo _get_html_cssjs('css','style.css,font-awesome.min.css,animate.css','css');?>
     <?php echo _get_html_cssjs('font','PT+Sans+Narrow/pt.css','css');?>
@@ -125,16 +125,16 @@
                         </p>
                         <ul>
                             <li>
-                                <h3><span></span><a href="http://www.sunnsoft.com/faq-2174.html" title="谁都能做app？别把app软件开发门槛想得太低">谁都能做app？别把app软件开发门槛想得太低</a></h3>
-                                <p>随着app制作公司和app自助开发平台的增多，很多人都宣扬现在是“app开发无门槛”“人人都可以开发软件app”的年代。真的是谁都能做app吗？是不是只要有自己的想法就可以实现呢？NO！【商侣软件】小编提醒大家，不要把app软件开发的门槛想得太低了。</p>
+                                <h3><span></span><a href="<?php echo base_url();?>news/detail?id=28" title="谁都能做app？别把app软件开发门槛想得太低">谁都能做app？别把app软件开发门槛想得太低</a></h3>
+                                <p>随着app制作公司和app自助开发平台的增多，很多人都宣扬现在是“app开发无门槛”“人人都可以开发软件app”的年代。真的是谁都能做app吗？是不是只要有自己的想法就可以实现呢？NO！【米荣科技】小编提醒大家，不要把app软件开发的门槛想得太低了。</p>
                             </li>
                             <li>
-                                <h3><span></span><a href="http://www.sunnsoft.com/faq-634.html" title="如何建设一个好的网站">如何建设一个好的网站</a></h3>
-                                <p>网站建设是一项复杂的工程，一个好的网站自建设过程中还要有一定的方法才能将其制作成一个好的网站，有着多年经验的广州商侣软件开发公司给大家简单地总结出如何建设一个好的网站。</p>
+                                <h3><span></span><a href="<?php echo base_url();?>news/detail?id=40" title="电商企业开发手机商城app注意点有哪些">电商企业开发手机商城app注意点有哪些</a></h3>
+                                <p>移动互联时代随着智能终端快速发展，移动购物的便利性越来越突出，淘宝、京东、苏宁等主流电子商务营销逐渐从PC端延伸至移动端。</p>
                             </li>
                             <li>
-                                <h3><span></span><a href="http://www.sunnsoft.com/faq-635.html" title="网页设计和网站建设的区别是什么">网页设计和网站建设的区别是什么</a></h3>
-                                <p>一般情况下很多人都觉得网页设计和网站建设是同一个内容，其实在字面上理解我们也会发现网页设计就是对我们平时打开的页面进行设计，其具体包括对页面的文字、声音、图片、视频动画等元素进行设计美化的一项工作。</p>
+                                <h3><span></span><a href="<?php echo base_url();?>news/detail?id=41" title="IOS APP推广渠道有哪些">IOS APP推广渠道有哪些</a></h3>
+                                <p>我们已经开发了IOS APP应用软件了，但是不知道怎么去推广，现在想了解一下关于IOS App目前主流的推广渠道有那些，尝试一下自己去推广。</p>
                             </li>
                         </ul>
                     </div>

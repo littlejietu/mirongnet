@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="ico/favicon.ico">
 
-    <title>Rooster - Multipurpose Business Theme</title>
+    <title>关于米荣 - 米荣科技 创新 效率 卓越</title>
 
     <!-- Bootstrap core CSS -->
     <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -43,7 +43,7 @@
 
         <div class="row">
           <div class="col-sm-7">
-            <h3 class="first-child"><span>杭州米荣网络科技有限公司</span></h3>
+            <h3 class="first-child"><span>杭州米荣科技有限公司</span></h3>
             <p>
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;专注于App开发、微信开发等移动互联网相关领域，通过严格管理规范和专业化服务为客户提供优质的手机App研发服务。公司由多位移动互联网资深从业精英创立，多年的技术沉淀，丰富的行业经验打造了一支技术实力雄厚的开发团队，为合作伙伴提供优质的定制服务。
             </p>

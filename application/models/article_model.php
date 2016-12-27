@@ -11,8 +11,8 @@ class Article_model extends XT_Model {
         if(!empty($class_id))
             $where['class_id']=$class_id;
         $where_prev = $where_next =$where;
-        $where_prev['addtime >']=$addtime;
-        $where_next['addtime <']=$addtime;
+        $where_prev['addtime >']=empty($addtime)?1:$addtime;
+        $where_next['addtime <']=empty($addtime)?1:$addtime;
         $info_prev = $this->get_by_where($where_prev,'id,title');
         $info_next = $this->get_by_where($where_next,'id,title');
 

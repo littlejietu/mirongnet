@@ -615,7 +615,8 @@ class Collect extends MY_Admin_Controller {
 						'title'=>$a['title'],
 						'content'=>$a['content'],
 						'status'=>1,
-						'addtime'=>time()
+						'addtime'=>time(),
+						'updatetime'=>time(),
 					);
 
 	    			$this->Article_model->insert_string($data);

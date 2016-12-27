@@ -40,10 +40,10 @@ class News extends MY_Controller
             $arrParam['close'] = 1;
 
 
-        $strOrder = 'sort asc';
+        $strOrder = 'sort desc,id desc';
         $arrWhere['status <>'] = -1;
         $list = $this->Article_model->fetch_page($page, $pagesize, $arrWhere,'*','updatetime DESC');
-     
+     //print_r($list);die;
         //分页
         $pagecfg = array();
         $pagecfg['base_url']     = _create_url(base_url().'news', $arrParam);
